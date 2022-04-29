@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/chicagoflf" type="text/css" />
+</head>
+
+<body>
+    <div class="monitor">
+        <img src="assets/img/1920monitor.png" alt="monitor" />
+    </div>
+    <div class="background">
+        <!-- option bar -->
+        <div class="option_bar">
+            <ul>
+                <li>
+                    <span><img src="assets/img/appleicon.png" alt="logo" /></span>
+                    <ul class="submenu">
+                        <p>About This Computer</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>About</span>
+                    <ul class="submenu">
+                        <p>Record</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Script</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Animation</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Contact</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Record</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //option bar -->
+
+        <!-- tool bar -->
+        <div class="tool_bar">
+            <div class="time"></div>
+        </div>
+        <!-- //tool bar -->
+
+        <!-- desktop -->
+        <div class="desktop droppable">
+            <!-- system folder -->
+            <div class="folder system-folder">
+                <div>
+                    <img src="assets/img/icon/Folder/open-directory.png" alt="directory" />
+                </div>
+                <span>System</span>
+            </div>
+
+            <!-- //system folder -->
+
+            <!-- system folder window -->
+            <div class="folder-window system-window">
+                <div class="window_title_bar">
+                    <div class="title_bar_close_bar">
+                        <button class="close"></button>
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                    </div>
+                    <div class="title_bar_title">
+                        <img src="assets/img/icon/Folder/open-directory.png" alt="directory" />
+                        <h4>System</h4>
+                    </div>
+                    <div class="title_bar_zoom_bar">
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                        <button class="zoom"></button>
+                        <button class="collapse"></button>
+                    </div>
+                </div>
+                <div class="window_main">
+                    <div class="window_contents_bar">
+                        <span><em>0</em>
+                            <p> items,</p><em> 0</em>
+                            <p> GB</p>
+                            <p> available</p>
+                        </span>
+                    </div>
+                    <div class="window_contents system_directory droppable">
+                        <div class="icon system-folder">
+                            <div>
+                                <img src="assets/img/icon/Folder/open-directory.png" alt="directory" />
+                            </div>
+                            <span>System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //system folder window -->
+
+        </div>
+        <!-- //desktop -->
+    </div>
+
+    <script>
+        const icon = document.querySelector(".icon")
+        const folder = document.querySelector(".folder")
+        const inIcon = document.querySelector(".droppable .icon")
+        const iconPosition = icon.getBoundingClientRect();
+        let currentDroppable = null;
+
+        icon.onmousedown = function (event) {
+
+            shiftX = event.clientX - icon.getBoundingClientRect().left;
+            shiftY = event.clientY - icon.getBoundingClientRect().top;
+
+            shiftXX = icon.getBoundingClientRect().left;
+            shiftT = icon.getBoundingClientRect().top;
+            shiftB = icon.getBoundingClientRect().bottom;
+            shiftW = icon.getBoundingClientRect().width;
+            shiftH = icon.getBoundingClientRect().height;
+
+            systemDirecrotyL = document.querySelector(".system_directory").getBoundingClientRect().left;
+            systemDirecrotyR = document.querySelector(".system_directory").getBoundingClientRect().right;
+            systemDirecrotyT = document.querySelector(".system_directory").getBoundingClientRect().top;
+            systemDirecrotyB = document.querySelector(".system_directory").getBoundingClientRect().bottom;
+
+            targetIcon = event.target;
+            console.log(targetIcon)
+
+            icon.style.position = 'absolute';
+            icon.style.zIndex = 1000;
+            document.body.append(icon);
+
+            moveAt(event.pageX, event.pageY);
+
+            function moveAt(pageX, pageY) {
+                icon.style.left = pageX - shiftX + 'px';
+                icon.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+
+                icon.hidden = true;
+                let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+
+                icon.hidden = false;
+
+                if (!elemBelow) return;
+
+                let droppableBelow = elemBelow.closest('.droppable');
+                if (currentDroppable != droppableBelow) {
+                    if (currentDroppable) { // null when we were not over a droppable before this event
+                        leaveDroppable(currentDroppable);
+                    }
+                    currentDroppable = droppableBelow;
+                    if (currentDroppable) { // null if we're not coming over a droppable now
+                        // (maybe just left the droppable)
+                        enterDroppable(currentDroppable);
+                    }
+                }
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            icon.onmouseup = function () {
+                document.removeEventListener('mousemove', onMouseMove);
+                icon.onmouseup = null;
+
+                if (systemDirecrotyL < shiftXX + shiftW && shiftXX + shiftW < systemDirecrotyR) {
+                    // window.left < dragIcon.x + dragIcon.width && dragIcon.x + dragIcon.width < window.right
+                    document.querySelector(".system_directory").appendChild(targetIcon);
+                    targetIcon.style = "position: static;";
+                    // targetIcon.style = "position: none;";
+                    // targetIcon.style = "position: absolute;";
+                    // targetIcon.style = "position: relative;";
+                    // targetIcon.style = "left: 0;";
+                    // console.log(shiftXX)
+                }
+            };
+
+        };
+
+        folder.onmousedown = function (event) {
+
+            shiftX = event.clientX - folder.getBoundingClientRect().left;
+            shiftY = event.clientY - folder.getBoundingClientRect().top;
+
+            shiftXX = folder.getBoundingClientRect().left;
+            shiftT = folder.getBoundingClientRect().top;
+            shiftB = folder.getBoundingClientRect().bottom;
+            shiftW = folder.getBoundingClientRect().width;
+            shiftH = folder.getBoundingClientRect().height;
+
+            systemDirecrotyL = document.querySelector(".system_directory").getBoundingClientRect().left;
+            systemDirecrotyR = document.querySelector(".system_directory").getBoundingClientRect().right;
+            systemDirecrotyT = document.querySelector(".system_directory").getBoundingClientRect().top;
+            systemDirecrotyB = document.querySelector(".system_directory").getBoundingClientRect().bottom;
+
+            targetfolder = event.target;
+            console.log(targetfolder)
+
+            folder.style.position = 'absolute';
+            folder.style.zIndex = 1000;
+            document.body.append(folder);
+
+            moveAt(event.pageX, event.pageY);
+
+            function moveAt(pageX, pageY) {
+                folder.style.left = pageX - shiftX + 'px';
+                folder.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+
+                folder.hidden = true;
+                let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+
+                folder.hidden = false;
+
+                if (!elemBelow) return;
+
+                let droppableBelow = elemBelow.closest('.droppable');
+                if (currentDroppable != droppableBelow) {
+                    if (currentDroppable) { // null when we were not over a droppable before this event
+                        leaveDroppable(currentDroppable);
+                    }
+                    currentDroppable = droppableBelow;
+                    if (currentDroppable) { // null if we're not coming over a droppable now
+                        // (maybe just left the droppable)
+                        enterDroppable(currentDroppable);
+                    }
+                }
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            folder.onmouseup = function () {
+                document.removeEventListener('mousemove', onMouseMove);
+                folder.onmouseup = null;
+
+                if (systemDirecrotyL < shiftXX + shiftW && shiftXX + shiftW < systemDirecrotyR) {
+                    // window.left < dragfolder.x + dragfolder.width && dragfolder.x + dragfolder.width < window.right
+                    document.querySelector(".system_directory").appendChild(targetfolder);
+                    targetfolder.style = "position: static;";
+                    console.log("first")
+                    // targetfolder.style = "position: none;";
+                    // targetfolder.style = "position: absolute;";
+                    // targetfolder.style = "position: relative;";
+                    // targetfolder.style = "left: 0;";
+                    // console.log(shiftXX)
+                }
+            };
+
+        };
+
+        function enterDroppable(elem) {
+            elem.style.background = 'pink';
+        }
+
+        function leaveDroppable(elem) {
+            elem.style.background = '';
+        }
+
+        icon.ondragstart = function () {
+            return false;
+        };
+        folder.ondragstart = function () {
+            return false;
+        };
+
+        // var droptarget = document.querySelector('.droptarget');
+        // var dragobj = document.getElementById('dragobj');
+
+
+        // dragobj.addEventListener('dragstart', function(event) {
+        // event.dataTransfer.setData('id', dragobj.id);
+        // return false;
+        // });
+        // droptarget.addEventListener('dragenter', function(event) {
+        // event.preventDefault();
+        // });
+        // droptarget.addEventListener('dragover', function(event) {
+        //     console.log(iconPosition);
+        //     icon.style.top = iconPosition.top + "px";
+        //     icon.style.left = iconPosition.left + "px";
+        // // event.preventDefault();
+        // });
+        // droptarget.addEventListener('drop', function(event) {
+        // var id = event.dataTransfer.getData('id');
+        // var obj = document.getElementById(id);
+        // event.preventDefault();
+        // this.appendChild(obj);
+        // });
+    </script>
+</body>
+
+</html>

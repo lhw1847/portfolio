@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/cardGame.css">
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/chicagoflf" type="text/css" />
+</head>
+
+<body>
+    <div class="monitor">
+        <img src="assets/img/1920monitor.png" alt="monitor" />
+    </div>
+    <div class="background">
+        <!-- option bar -->
+        <div class="option_bar">
+            <ul>
+                <li>
+                    <span><img src="assets/img/appleicon.png" alt="logo" /></span>
+                    <ul class="submenu">
+                        <p>About This Computer</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>About</span>
+                    <ul class="submenu">
+                        <p>Record</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Script</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Animation</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Contact</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Record</span>
+                    <ul class="submenu">
+                        <p>asd</p>
+                        <li><img src="#" alt="#" />1</li>
+                        <li><img src="#" alt="#" />2</li>
+                        <li><img src="#" alt="#" />3</li>
+                        <li><img src="#" alt="#" />4</li>
+                        <li><img src="#" alt="#" />5</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //option bar -->
+
+        <!-- tool bar -->
+        <div class="tool_bar">
+            <div class="time"></div>
+        </div>
+        <!-- //tool bar -->
+
+        <!-- desktop -->
+        <div class="desktop droppable">
+            <!-- system folder -->
+            <div class="icon folder Game-folder" ondblclick="dbclick()">
+                <div>
+                    <img src="assets/img/icon/Folder/open-directory.png" alt="directory" />
+                </div>
+                <span>Game</span>
+            </div>
+
+            <!-- //system folder -->
+
+            <!-- system folder window -->
+            <div class="folder-window system-window">
+                <div class="window_title_bar">
+                    <div class="title_bar_close_bar">
+                        <button class="close" onclick="closeFolder()"></button>
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                    </div>
+                    <div class="title_bar_title">
+                        <img src="assets/img/icon/Folder/open-directory.png" alt="directory" />
+                        <h4>Game</h4>
+                    </div>
+                    <div class="title_bar_zoom_bar">
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                        <button class="zoom"></button>
+                        <button class="collapse" onclick="collapse()"></button>
+                    </div>
+                </div>
+                <div class="window_main">
+                    <div class="window_contents_bar">
+                        <span><em>0</em>
+                            <p> items,</p><em> 0</em>
+                            <p> GB</p>
+                            <p> available</p>
+                        </span>
+                    </div>
+                    <div class="window_contents system_directory droppable">
+                        <div class="icon card-game" ondblclick="cardGame()">
+                            <div>
+                                <img src="assets/img/icon/Game/card.png" alt="directory" />
+                            </div>
+                            <span>Card Game</span>
+                        </div>
+                        <div class="icon typing-game" ondblclick="">
+                            <div>
+                                <img src="assets/img/icon/Game/Keyboard.png" alt="directory" />
+                            </div>
+                            <span>Typing Game</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //system folder window -->
+            <div class="icon trash" ondblclick="trsClick()">
+                <div>
+                    <img src="assets/img/Icon/System/trash-empty.png" alt="trash" />
+                </div>
+                <span class="span">Trash</span>
+            </div>
+            <div class="empty-trash-window">
+                <div class="window_title_bar" style=" width: 100%; margin-top: auto;">
+                </div>
+                <div class="empty-img-text">
+                    <img src="assets/img/Icon/System/trash-full.png" alt="trash-empty">
+                    <div class="warning">
+                        <span>Are you sure want to permanently erase
+                            the items in the Trash?
+                        </span>
+                        <p>You can't undo this action</p>
+                    </div>
+                </div>
+                <div class="trash_btn">
+                    <button class="cancle">Cancle</button>
+                    <button class="empty">Empty Trash</button>
+                </div>
+            </div>
+            <div class="card_game">
+                <!-- card game -->
+                <div class="window_title_bar">
+                    <div class="title_bar_close_bar">
+                        <button class="close" onclick="cardClose()"></button>
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                    </div>
+                    <div class="title_bar_title">
+                        <img src="assets/img/icon/Game/card.png" alt="directory" />
+                        <h4>Card Game</h4>
+                    </div>
+                    <div class="title_bar_zoom_bar">
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                        <button class="zoom"></button>
+                        <button class="collapse" onclick="cardCollapse()"></button>
+                    </div>
+                </div>
+                <div class="window_main">
+                    <div class="window_contents">
+                        <div class="start__btn active">
+                            <button>Start</button>
+                        </div>
+                        <!-- 규칙 박스 -->
+                        <div class="info__box">
+                            <div class="title">
+                                <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                                <div>
+                                    <img src="assets/img/icon/Game/card.png" alt="directory" />
+                                    <span>Card Game</span>
+                                </div>
+                                <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                            </div>
+                            <div class="list">
+                                <ol>
+                                    <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
+                                    <li>기회를 5번을 소진하면 실패 하게됩니다.</li>
+                                    <li>카드가 완전히 뒤집어진 후 클릭하세요.</li>
+                                    <li>적은 기회로 완성하면 점수가 높습니다.</li>
+                                    <li>1등에게는 자동차를 선물로 드리겠습니다.</li>
+                                </ol>
+                            </div>
+                            <div class="buttons">
+                                <button class="stop">stop</button>
+                                <button class="start">start</button>
+                            </div>
+                        </div>
+        
+                        <!-- 카드 박스 -->
+                        <div class="card__wrap">
+                            <div class="card__inner">
+                                <div class="remain">현재 남은 기회 : <span>5</span></div>
+                                <div class="card__sound">
+                                    <audio id="song" src="audio/Jeremy_Black.mp3" loop="loop"></audio>
+                                    <button class="material-icons">volume_off</button>
+                                </div>
+                                <ul class="cards">
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-1.png" alt="img-1">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-2.png" alt="img-2">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-3.png" alt="img-3">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-4.png" alt="img-4">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-5.png" alt="img-5">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-6.png" alt="img-6">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-7.png" alt="img-7">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-8.png" alt="img-8">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-1.png" alt="img-1">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-2.png" alt="img-2">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-3.png" alt="img-3">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-4.png" alt="img-4">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-5.png" alt="img-5">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-6.png" alt="img-6">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-7.png" alt="img-7">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view front">
+                                            <img src="img/img-0.png" alt="img-0">
+                                        </div>
+                                        <div class="view back">
+                                            <img src="img/img-8.png" alt="img-8">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- 결과 박스 -->
+                        <div class="result__box">
+                            <div class="title">
+                                <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                                <div>
+                                    <img src="assets/img/icon/Game/card.png" alt="directory" />
+                                    <span>성공</span>
+                                </div>
+                                <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                            </div>
+                            <div class="score">
+                                <span></span>
+                            </div>
+                            <div class="buttons">
+                                <button class="stop">stop</button>
+                                <button class="restart">re start</button>
+                            </div>
+                        </div>
+                        <div class="fail">
+                            <div class="title">
+                                <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                                <div>
+                                    <img src="assets/img/icon/Game/card.png" alt="directory" />
+                                    <span>실패</span>
+                                </div>
+                                <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                            </div>
+                            <div class="score">
+                                당신은 기회 5번 소진했습니다.
+                            </div>
+                            <div class="buttons">
+                                <button class="stop">stop</button>
+                                <button class="failRestart">re start</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+        <!-- //desktop -->
+
+    </div>
+
+    <script src="assets/js/cardGame.js"></script>
+    <script>
+        function dbclick() {
+            document.querySelector(".system-window").style.display = "block";
+        }
+
+        function trsClick() {
+            document.querySelector(".empty-trash-window").style.display = "block";
+        }
+
+        function collapse() {
+            document.querySelector(".system-window").classList.toggle("close");
+        }
+
+        function closeFolder() {
+            document.querySelector(".system-window").style.display = "none";
+        }
+        function cardGame() {
+            document.querySelector(".card_game").style.display = "block";
+            document.querySelector(".card__wrap").classList.remove("active");
+            document.querySelector(".result__box").classList.remove("active");
+            document.querySelector(".info__box").classList.remove("active");
+            document.querySelector(".fail").classList.remove("active");
+            document.querySelector(".start__btn").classList.add("active");
+        }
+        function cardClose() {
+            document.querySelector(".card_game").style.display = "none";
+        }
+        function cardCollapse() {
+            document.querySelector(".card_game").classList.toggle("close");
+        }
+    </script>
+</body>
+
+</html>
