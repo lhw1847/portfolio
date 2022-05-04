@@ -1,5 +1,5 @@
 * {margin: 0; padding: 0; box-sizing: border-box; font-family: "chicagoflf";}
-.card_game {display: none; position: absolute; top: 15px; bottom: 0; left: 0; right: 0; margin: 0 auto; width: 605px; height: 622px; background: url(../img/Icon/Game/card_bg.png); z-index: 500; box-shadow: 1px 1px 1px 1px #333;}
+.card_game {display: none; position: absolute; top: 0px; bottom: 0; left: 0; right: 0; margin: 0 auto; width: 605px; height: 622px; background: url(../img/Icon/Game/card_bg.png); z-index: 500; box-shadow: 1px 1px 1px 1px #333;}
 .card_game .window_title_bar {width: 99.8%;}
 .card_game .window_contents {width: 99%; height: 600px; position: relative;}
 .card_game.close {width: 605px; height: 20px;}
@@ -70,14 +70,13 @@ button:active {opacity: 0.8;}
     background: #fff;
     box-shadow: inset 0 0 1px 1px #000;
 }
-
 .card__wrap li {
     list-style: none;
 }
 
 .card__inner {
     position: absolute;
-    padding: 20px;
+    padding: 0 20px;
     width: 100%;
     height: 100%;
 }
@@ -91,7 +90,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-content: space-around;
+    align-items: start;
     width: 100%;
     height: 100%;
 }
@@ -106,8 +105,7 @@ img {
 
 .cards li .view {
     position: absolute;
-    padding: 10%;
-    background: #ccc;
+    padding: 2% 10%;
     transition: transform 0.25s linear;
     backface-visibility: hidden;
     user-select: none;
@@ -240,8 +238,11 @@ img {
 }
 
 .remain {
+    width: 120px;
+    height: 120px;background: #fff;
     z-index: 9999;
     position: fixed;
     top: 5px;
-    left: 30px;
+    left: -150px;
+    border: 1px inset #000;
 }

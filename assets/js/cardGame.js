@@ -8,7 +8,7 @@ const startBtn = document.querySelector(".start__btn");
         const failBoxStart = document.querySelector(".failRestart");
         const failBox = document.querySelector(".fail");
         const score = document.querySelector(".score span");
-        const remain = document.querySelector(".remain");
+        const remain = document.querySelector(".remain span");
         let cardOne, cardTwo;
         let disableDeck = false;
         let matchedCard = 0;
@@ -50,6 +50,7 @@ const startBtn = document.querySelector(".start__btn");
             
         }
         failBoxStart.onclick = () => {
+            remain.innerText = "현재 남은 기회 : 5";
             failBox.classList.remove("active");
             setTimeout(() => {
                 cardWrap.classList.add("active");
@@ -96,7 +97,7 @@ const startBtn = document.querySelector(".start__btn");
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo = "";
                 disableDeck = false;
-                soundMatch.play();
+                // soundMatch.play();
             } else {
                 
                 lifeCurrent++;
@@ -114,7 +115,7 @@ const startBtn = document.querySelector(".start__btn");
                     cardOne = cardTwo = "";
                     disableDeck = false;
                 }, 1200);
-                soundNoMatch.play();
+                // soundNoMatch.play();
             }
             remain.innerText = "현재 남은 기회 : " + (answer - lifeCurrent);
             if(answer - lifeCurrent == 5){
@@ -137,6 +138,7 @@ const startBtn = document.querySelector(".start__btn");
             let arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
             //let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
             cards.forEach((card, index) => {
+                card.style.pointerEvents = "none";
                 card.addEventListener("click", flipCard);
                 card.classList.remove("flip");
                 setTimeout(() => {
@@ -144,9 +146,10 @@ const startBtn = document.querySelector(".start__btn");
                 }, 200 * index);
                 setTimeout(() => {
                     card.classList.remove("flip");
+                    card.style.pointerEvents = "all";
                 }, 4000);
                 let imgTag = card.querySelector(".back img");
-                imgTag.src = `img/img-${arr[index]}.png`;
+                imgTag.src = `assets/img/Icon/Game/card${arr[index]}.png`;
             })
         }
 

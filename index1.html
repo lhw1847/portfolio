@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/style1.css" />
         <link rel="stylesheet" href="assets/css/reset.css" />
         <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/chicagoflf" type="text/css" />
     </head>
@@ -200,37 +200,37 @@
                 $(this).css("zIndex", zIndex);
             })
             $(".icon").draggable({
-                containment: ".desktop.ui-droppable",
-                accept: ".window_contents",
+                // containment: ".desktop.ui-droppable",
+                // accept: ".window_contents",
                 start: function () {
                     zIndex++;
                     $(this).css("zIndex", zIndex);
                     console.log("icon move");
                 },
                 drag: function(event, ui){
-                    // var dragIcon = document.querySelector(".icon").getBoundingClientRect();
-                    // console.log(dragIcon)
-                    // var window = document.querySelectorAll(".window_contents").forEach(el => {
-                    //     el.getBoundingClientRect();
-                    // })
-                    // var window = document.querySelector(".window_contents").getBoundingClientRect();
-                    // console.log(window.bottom,window.top)
-                    // console.log(window.left,window.right)
+                    var dragIcon = document.querySelector(".icon").getBoundingClientRect();
+                    console.log(dragIcon)
+                    var window = document.querySelectorAll(".window_contents").forEach(el => {
+                        el.getBoundingClientRect();
+                    })
+                    var window = document.querySelector(".window_contents").getBoundingClientRect();
+                    console.log(window.bottom,window.top)
+                    console.log(window.left,window.right)
                 },
                 stop: function( event, ui ) {
                     var dragIcon = document.querySelector(".icon").getBoundingClientRect();
-                    var window = document.querySelector(".system_contents").getBoundingClientRect();
+                    var window = document.querySelector(".trash_contents").getBoundingClientRect();
                     console.log(window.left,window.right);
                     if (window.left < dragIcon.x + dragIcon.width && dragIcon.x + dragIcon.width < window.right){
-                        $(".system_contents").prepend($(this));
-                        $(".system_contents").find(".icon").css("position", "static");
+                        $(".trash_contents").prepend($(this));
+                        $(".trash_contents").find(".icon").css("position", "static");
                     } else {
                         $(".desktop").prepend($(this));
                         $(".window_contents").find(".icon").css("position", "relative");
                     }
                 }
             });
-            $(".window_contents .icon").draggable();
+            // $(".window_contents .icon").draggable();
             $(".empty-trash-window").draggable({
                 start: function () {
                     zIndex++;
@@ -247,7 +247,7 @@
                     $(".trash-window .window_contents").append( ui.draggable );
 
                     console.log(event)
-                    $(".icon").css("position","static");
+                    // $(".icon").css("position","static");
                     zIndex=+2;
                     $(this).css("zIndex", zIndex);
                     // $(".icon").removeClass("ui-draggable");
@@ -258,28 +258,28 @@
                 }
             });
             // $(".folder-window .window_contents .icon").draggable();
-            $(".desktop").droppable({
-                accept: ".folder-window .window_contents .icon",
+            // $(".desktop").droppable({
+            //     accept: ".folder-window .window_contents .icon",
 
-                drop: function( event, ui ) {
-                    $(".icon").draggable({
-                        helper: "clone"
-                    })
-                    // $(this).html( ui.draggable );
-                    recycleImage( ui.draggable );
-                    console.log(ui + "ss")
-                    // $(".icon").css("position","static");
-                }
-            });
-            function recycleImage( $item ) {
-                $item.show(function() {
-                    $item
-                    .appendTo( ".desktop" )
-                    .show();
-                    zIndex=+2;
-                    $(this).css("zIndex", zIndex);
-                });
-            }
+            //     drop: function( event, ui ) {
+            //         $(".icon").draggable({
+            //             helper: "clone"
+            //         })
+            //         // $(this).html( ui.draggable );
+            //         recycleImage( ui.draggable );
+            //         // console.log(ui + "ss")
+            //         // $(".icon").css("position","static");
+            //     }
+            // });
+            // function recycleImage( $item ) {
+            //     $item.show(function() {
+            //         $item
+            //         .appendTo( ".desktop" )
+            //         .show();
+            //         zIndex=+2;
+            //         $(this).css("zIndex", zIndex);
+            //     });
+            // }
 
 
 
@@ -313,6 +313,8 @@
             submenuWrap.mouseenter(function () {
                 $(this).find(".submenu").stop().show();
                 console.log("menu show");
+                zIndex++;
+                $(this).find(".submenu").css("zIndex", zIndex);
             });
 
             submenuWrap.mouseleave(function () {

@@ -19,6 +19,9 @@
   right: 0; bottom: 0;
   margin: auto;
 }
+.trash-window .delete {
+  pointer-events: all;
+}
 
 
 .monitor img {
@@ -174,6 +177,8 @@
   align-items: center;
   box-shadow: inset 0 0 1px 1px #000;
   z-index: 200;
+  overflow: auto;
+  resize: both;
   /* display: none; */
 }
 .folder-window.close {
@@ -190,7 +195,8 @@
   background: #ccc;
   display: flex;
   align-items: center;
-
+  overflow: auto;
+  resize: inherit;
   justify-content: space-between;
 }
 .close {
@@ -240,6 +246,7 @@
   width: 99%;
   /* pointer-events: none; */
   height: 79%;
+  resize: both;
 }
 .window_contents_bar {
   width: 100%;
@@ -250,6 +257,7 @@
   justify-content: center;
   user-select: none;
   pointer-events: none;
+  resize: both;
   /* pointer-events: none; */
 }
 .window_contents_bar span p {
@@ -263,6 +271,8 @@
   display: flex;
   padding: 15px;
   box-shadow: inset 0 0 1px 1px #000;
+  resize: both;
+
   /* user-select: none; */
   /* pointer-events: none; */
 }
