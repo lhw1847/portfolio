@@ -1,35 +1,103 @@
-* {margin: 0; padding: 0; box-sizing: border-box; font-family: "chicagoflf";}
-.card_game {display: none; position: absolute; top: 0px; bottom: 0; left: 0; right: 0; margin: 0 auto; width: 605px; height: 622px; background: url(../img/Icon/Game/card_bg.png); z-index: 500; box-shadow: 1px 1px 1px 1px #333;}
-.card_game .window_title_bar {width: 99.8%;}
-.card_game .window_contents {width: 99%; height: 600px; position: relative;}
-.card_game.close {width: 605px; height: 20px;}
-.card_game.close .window_main {display: none;}
-button {border: 0; cursor: pointer; transition: all 0.3s;}
-button:active {opacity: 0.8;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "chicagoflf", "NeoDunggeunmo";
+}
+
+.card_game {
+    display: none;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 605px;
+    height: 622px;
+    background: url(../img/Icon/Game/card_bg.png);
+    z-index: 500;
+    box-shadow: 1px 1px 1px 1px #333;
+}
+
+.card_game .window_title_bar {
+    width: 99.8%;
+}
+
+.card_game .window_contents {
+    width: 99%;
+    height: 600px;
+    position: relative;
+}
+
+.card_game.close {
+    width: 605px;
+    height: 20px;
+}
+
+.card_game.close .window_main {
+    display: none;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
 .start__btn,
 .info__box,
 .card__wrap,
 .result__box,
-.fail {position: absolute;left: 50%; top: 50%; transform: translate(-50%, -50%) scale(0.8); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.17); opacity: 0; pointer-events: none; transition: all 0.3s ease-in-out;}
+.fail {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.17);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
 .start__btn.active,
 .info__box.active,
 .card__wrap.active,
 .result__box.active,
-.fail.active {opacity: 1; z-index: 10; pointer-events: auto; transform: translate(-50%, -50%) scale(1);}
-.start__btn{box-shadow:none;}
+.fail.active {
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.start__btn {
+    box-shadow: none;
+}
+
 .start__btn button {
     background: #ccc;
     padding: .8rem 3rem;
-    font-family: "chicagoflf";
+    font-family: "chicagoflf", "NeoDunggeunmo";
     border: 2px solid #ccc;
 }
-.start__btn button:active {border: 2px inset #ccc;}
+
+.start__btn button:active {
+    border: 2px inset #ccc;
+}
+
 .info__box {
     width: 500px;
     background: #fff;
 }
 
-.info__box .title, .result__box .title, .fail .title {
+.info__box .title,
+.result__box .title,
+.fail .title {
     height: 19px;
     background: #fff;
     display: flex;
@@ -38,11 +106,31 @@ button:active {opacity: 0.8;}
     text-align: center;
     font-size: 12px;
 }
-.info__box .title > img, .result__box .title > img, .fail .title > img {
-    width: 38%; height: 16px;
+
+.info__box .title>img,
+.result__box .title>img,
+.fail .title>img {
+    width: 38%;
+    height: 16px;
 }
-.info__box .title div, .result__box .title > div, .fail .title > div {width: 90px; display: flex; align-items: center; justify-content: space-between; white-space: nowrap;}
-.info__box .title div img, .result__box .title > div img, .fail .title > div img {width: 13px; height: 13px;}
+
+.info__box .title div,
+.result__box .title>div,
+.fail .title>div {
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.info__box .title div img,
+.result__box .title>div img,
+.fail .title>div img {
+    width: 13px;
+    height: 13px;
+}
+
 .info__box .list ol {
     padding: 1.3rem 3rem;
 }
@@ -62,7 +150,11 @@ button:active {opacity: 0.8;}
     margin: 0 0.2em;
     font-family: "chicagoflf";
 }
-.info__box .buttons button:active {border: 2px inset #ccc;}
+
+.info__box .buttons button:active {
+    border: 2px inset #ccc;
+}
+
 .card__wrap {
     position: absolute;
     width: 600px;
@@ -70,6 +162,7 @@ button:active {opacity: 0.8;}
     background: #fff;
     box-shadow: inset 0 0 1px 1px #000;
 }
+
 .card__wrap li {
     list-style: none;
 }
@@ -196,15 +289,18 @@ img {
     border: 2px solid #ccc;
     margin: 0 0.2em;
     display: inline-block;
-    font-family: "chicagoflf";
+    font-family: "chicagoflf", "NeoDunggeunmo";
 }
+
 .fail .buttons button:active,
-.result__box .buttons button:active {border: 2px inset #ccc;}
+.result__box .buttons button:active {
+    border: 2px inset #ccc;
+}
 
 .card__sound {
-    position: fixed;
+    /* position: fixed;
     right: 50px;
-    top: -4px;
+    top: -4px; */
     cursor: pointer;
 }
 
@@ -239,7 +335,8 @@ img {
 
 .remain {
     width: 120px;
-    height: 120px;background: #fff;
+    height: 120px;
+    background: #fff;
     z-index: 9999;
     position: fixed;
     top: 5px;

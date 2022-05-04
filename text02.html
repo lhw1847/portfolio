@@ -96,7 +96,7 @@
         <!-- //tool bar -->
 
         <!-- desktop -->
-        <div class="desktop droppable">
+        <div class="desktop">
             <!-- system folder -->
             <div class="folder system-folder">
                 <div>
@@ -151,8 +151,8 @@
     <script>
         const icon = document.querySelector(".icon")
         const folder = document.querySelector(".folder")
-        const inIcon = document.querySelector(".droppable .icon")
-        const iconPosition = icon.getBoundingClientRect();
+        // const inIcon = document.querySelector(".droppable .icon")
+        // const iconPosition = icon.getBoundingClientRect();
         let currentDroppable = null;
 
         icon.onmousedown = function (event) {

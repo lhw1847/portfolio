@@ -8,8 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/cardGame.css">
+    <link rel="stylesheet" href="assets/css/music.css">
     <link rel="stylesheet" href="assets/css/reset.css" />
+    <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/chicagoflf" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -24,20 +27,26 @@
                     <span><img src="assets/img/appleicon.png" alt="logo" /></span>
                     <ul class="submenu">
                         <p>About This Computer</p>
-                        <li><img src="#" alt="#" />1</li>
-                        <li><img src="#" alt="#" />2</li>
-                        <li><img src="#" alt="#" />3</li>
-                        <li><img src="#" alt="#" />4</li>
-                        <li><img src="#" alt="#" />5</li>
+                        <li><a href="https://sulmara.com" target="_blank" rel="noopener noreferrer"><span>1</span></a>
+                        </li>
+                        <li><a href="https://www.christinavanessa.com/explore" target="_blank"
+                                rel="noopener noreferrer"><span>2</span></a></li>
+                        <li><a href="https://mubien.com/" target="_blank" rel="noopener noreferrer"><span>3</span></a>
+                        </li>
+                        <li><a href="https://audentodigital.com/" target="_blank"
+                                rel="noopener noreferrer"><span>4</span></a></li>
+                        <li><a href="http://jespr.se/" target="_blank" rel="noopener noreferrer"><span>5</span></a></li>
                     </ul>
                 </li>
                 <li>
                     <span>Script</span>
                     <ul class="submenu">
                         <p>Javascript</p>
-                        <li><img src="assets/img/icon/Game/card.png" alt="card game" /><span>Card Game</span></li>
-                        <li><img src="assets/img/Icon/Menu/music.png" alt="music app" /><span>Music App</span></li>
-                        <li><img src="assets/img/Icon/Game/tetrismove.png" alt="tetris game" /><span>Tetris Game</span></li>
+                        <li onclick="cardGame()"><img src="assets/img/icon/Game/card.png" alt="card game" /><span>Card
+                                Game</span></li>
+                        <li onclick="musicOpen()"><img src="assets/img/Icon/Menu/music.png" alt="music app" /><span>Music App</span></li>
+                        <li><img src="assets/img/Icon/Game/tetrismove.png" alt="tetris game" /><span>Tetris Game</span>
+                        </li>
                         <li><img src="assets/img/Icon/Game/Keyboard.png" alt="#" /><span>Typing Game</span></li>
                     </ul>
                 </li>
@@ -46,7 +55,8 @@
                     <ul class="submenu">
                         <p>Javascript Effect</p>
                         <li><img src="assets/img/Icon/Menu/mouse.png" alt="mouse" /><span>Mouse Effect</span></li>
-                        <li><img src="assets/img/Icon/Menu/parallax.png" alt="parallax" /><span>Parallax Effect</span></li>
+                        <li><img src="assets/img/Icon/Menu/parallax.png" alt="parallax" /><span>Parallax Effect</span>
+                        </li>
                         <li><img src="assets/img/Icon/Menu/quiz.png" alt="quiz" /><span>Quiz Effect</span></li>
                         <li><img src="assets/img/Icon/Menu/search.png" alt="search" /><span>Search Effect</span></li>
                         <li><img src="assets/img/Icon/Menu/slide.png" alt="#" /><span>Silde Effect</span></li>
@@ -69,7 +79,8 @@
                         <p>asd</p>
                         <li><img src="assets/img/Icon/Menu/css.png" alt="css" /><span>CSS</span></li>
                         <li><img src="assets/img/Icon/Menu/html.png" alt="html" /><span>HTML</span></li>
-                        <li><img src="assets/img/Icon/Menu/javascript.png" alt="javascript" /><span>Javascript</span></li>
+                        <li><img src="assets/img/Icon/Menu/javascript.png" alt="javascript" /><span>Javascript</span>
+                        </li>
                         <li><img src="assets/img/Icon/Menu/jquery.png" alt="jquery" /><span>JQuery</span></li>
                         <li><img src="assets/img/Icon/Menu/mysql.png" alt="mysql" /><span>MysQL</span></li>
                     </ul>
@@ -218,7 +229,7 @@
                                 <button class="start">start</button>
                             </div>
                         </div>
-        
+
                         <!-- 카드 박스 -->
                         <div class="card__wrap">
                             <div class="remain">
@@ -234,11 +245,11 @@
                                         <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
                                     </div>
                                 </div>
-                                    <span>현재 남은 기회 : 5</span>
-                            </div>
-                            <div class="card__sound">
-                                <audio id="song" src="audio/Jeremy_Black.mp3" loop="loop"></audio>
-                                <button class="material-icons">volume_off</button>
+                                <span>현재 남은 기회 : 5</span>
+                                <div class="card__sound">
+                                    <audio id="song" src="audio/Jeremy_Black.mp3" loop="loop"></audio>
+                                    <button class="material-icons">volume_off</button>
+                                </div>
                             </div>
                             <div class="card__inner">
                                 <ul class="cards">
@@ -373,7 +384,7 @@
                                 </ul>
                             </div>
                         </div>
-        
+
                         <!-- 결과 박스 -->
                         <div class="result__box">
                             <div class="title">
@@ -412,13 +423,93 @@
                     </div>
                 </div>
             </div>
-                
+
+            <div class="wrap__music">
+                <div class="window_title_bar">
+                    <div class="title_bar_close_bar">
+                        <button class="close" onclick="musicClose()"></button>
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                    </div>
+                    <div class="title_bar_title">
+                        <img src="assets/img/icon/Game/card.png" alt="directory" />
+                        <h4>Music</h4>
+                    </div>
+                    <div class="title_bar_zoom_bar">
+                        <img class="title_bar" src="assets/img/Icon/Window/title-bar.svg" alt="" />
+                        <button class="zoom expand_more"></button>
+                        <button class="collapse more_horiz" onclick="cardCollapse()"></button>
+                    </div>
+                </div>
+                <div class="music-border">
+                    <div class="music__inner">
+                        <!-- //music__top -->
+                        <div class="music__img">
+                            <img src="" alt="">
+                        </div>
+                        <!-- //music__img -->
+                        <div class="music__song">
+                            <p class="name"></p>
+                            <p class="artist"></p>
+                        </div>
+                        <!-- //music__song -->
+                        <div class="music__progress">
+                            <div class="bar">
+                                <audio id="main-audio" src=""></audio>
+                            </div>
+                            <div class="timer">
+                                <span class="current"></span>
+                                <span class="duration"></span>
+                            </div>
+                        </div>
+                        <!-- //music__progress -->
+                        <div class="music__control">
+                            <i id="control-repeat" class="material-icons" title="전체 반복">repeat</i>
+                            <!-- <i class="material-icons">repeat_one</i>
+                            <i class="material-icons">shuffle</i> -->
+                            <i id="control-prev" class="material-icons" title="이전곡 재생">skip_previous</i>
+                            <div class="play-pause">
+                                <i id="control-play" class="material-icons" title="재생">play_arrow</i>
+                                <!-- <i class="material-icons">pause</i> -->
+                            </div>
+                            <!-- //music__control -->
+                            <i id="control-next" class="material-icons" title="다음곡 재생">skip_next</i>
+                            <i id="control-list" class="material-icons" title="재생 목록">queue_music</i>
+                        </div>
+                        <div class="music__list">
+                            <div class="title">
+                                <div>
+                                    <i class="material-icons queue">queue_music</i>
+                                    <span>Music List</span>
+                                </div>
+                                <i class="material-icons close" title="닫기">close</i>
+                            </div>
+                            <div class="list">
+                                <ul>
+                                    <!-- javascript -->
+                                    <!-- <li>
+                                        <div>
+                                            <em></em>
+                                            <p></p>
+                                        </div>
+                                        <span></span>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- //music__list -->
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- //desktop -->
 
     </div>
 
+    <script src="assets/js/drag.js"></script>
     <script src="assets/js/cardGame.js"></script>
+    <script src="assets/js/musicAPI.js"></script>
+    <script src="assets/js/music.js"></script>
     <script>
         function dbclick() {
             document.querySelector(".system-window").style.display = "block";
@@ -435,6 +526,7 @@
         function closeFolder() {
             document.querySelector(".system-window").style.display = "none";
         }
+
         function cardGame() {
             document.querySelector(".card_game").style.display = "block";
             document.querySelector(".card__wrap").classList.remove("active");
@@ -443,11 +535,20 @@
             document.querySelector(".fail").classList.remove("active");
             document.querySelector(".start__btn").classList.add("active");
         }
+
         function cardClose() {
             document.querySelector(".card_game").style.display = "none";
         }
+
         function cardCollapse() {
             document.querySelector(".card_game").classList.toggle("close");
+        }
+
+        function musicOpen() {
+            document.querySelector(".wrap__music").style.display = "block";
+        }
+        function musicClose() {
+            document.querySelector(".wrap__music").style.display = "none";
         }
     </script>
 </body>
