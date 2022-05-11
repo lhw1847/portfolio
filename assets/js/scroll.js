@@ -37,46 +37,46 @@
         let active = 0;
         let pag, bullets;
 
-        const pagination = () => {
-            const items = document.querySelectorAll('.item');
-            pag = document.createElement('div');
-            pag.classList.add('pagination');
-            items.forEach((item, i) => {
-                const bullet = document.createElement('button');
-                bullet.classList.add('bullet');
-                bullet.innerHTML = i;
-                pag.appendChild(bullet);
-            });
-            document.getElementById('scrollbar').appendChild(pag);
-            bullets = document.querySelectorAll('.bullet');
+        // const pagination = () => {
+        //     const items = document.querySelectorAll('.item');
+        //     pag = document.createElement('div');
+        //     pag.classList.add('pagination');
+        //     items.forEach((item, i) => {
+        //         const bullet = document.createElement('button');
+        //         bullet.classList.add('bullet');
+        //         bullet.innerHTML = i;
+        //         pag.appendChild(bullet);
+        //     });
+        //     document.getElementById('scrollbar').appendChild(pag);
+        //     bullets = document.querySelectorAll('.bullet');
 
-            bullets.forEach((b, i) => {
-                b.addEventListener('click', el => {
-                    bullets.forEach(el => {
-                        el.classList.remove('active');
-                    });
-                    el.target.classList.add('active');
-                    const i = parseInt(el.target.innerHTML);
-                    active = i;
+        //     bullets.forEach((b, i) => {
+        //         b.addEventListener('click', el => {
+        //             bullets.forEach(el => {
+        //                 el.classList.remove('active');
+        //             });
+        //             el.target.classList.add('active');
+        //             const i = parseInt(el.target.innerHTML);
+        //             active = i;
 
-                    let x = itemWidth * i;
-                    if (x > scrollbar.limit.x) {
-                        x = scrollbar.limit.x;
-                    }
+        //             let x = itemWidth * i;
+        //             if (x > scrollbar.limit.x) {
+        //                 x = scrollbar.limit.x;
+        //             }
 
-                    TweenMax.to(option, 1, {
-                        x: x,
-                        ease: Power4.easeOut,
-                        onUpdate: () => {
-                            // window.console.log('option', option.x);
-                            scrollbar.scrollTo(option.x, 0, 0);
-                        }
-                    });
+        //             TweenMax.to(option, 1, {
+        //                 x: x,
+        //                 ease: Power4.easeOut,
+        //                 onUpdate: () => {
+        //                     // window.console.log('option', option.x);
+        //                     scrollbar.scrollTo(option.x, 0, 0);
+        //                 }
+        //             });
 
-                });
-            });
-        };
-        pagination();
+        //         });
+        //     });
+        // };
+        // pagination();
 
 
         /*--------------------

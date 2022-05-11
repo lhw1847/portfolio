@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potfolio</title>
+    <style>
+        @import url(assets/css/style01.css);
+        @import url(assets/css/fonts.css);
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">PORTFOLIO</div>
+        <span class="menu material-symbols-outlined">menu</span>
+    </header>
+    <main id="scrollbar">
+        <!-- <div class="menu_modal"></div> -->
+        <div class="wrapper">
+            <section class="item">
+                <div class="text">
+                    <h2>At Heart,
+                        <strong>
+                            Portfolio Site
+                        </strong>
+                    </h2>
+                    <p>Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
+aliquam
+voluptates! Odio vitae eum nobis dignissimos sunt
+ipsum repellendus totam optio distinctio. Laborum
+suscipit quia aperiam.</p>
+                </div>
+                <div class="section_img">
+                    <div class="img"></div>
+                </div>
+            </section>
+            <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
+                aliquam
+                voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
+                suscipit quia aperiam.</section>
+                <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
+                    aliquam
+                    voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
+                    suscipit quia aperiam.</section>
+                    <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
+                        aliquam
+                        voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
+                        suscipit quia aperiam.</section>
+                        <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
+                aliquam
+                voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
+                suscipit quia aperiam.</section>
+        <div class="scroll_help">
+            <p>Scroll</p>
+            <div class="arrow_bg">
+                <img src="assets/img/arrow.svg" alt="arrwo">
+            </div>
+        </div>
+        <span class="bgt">PORTFOLIO SITE</span>
+        </div>
+    </main>
+    <script src="assets/js/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+    <script src="assets/js/smooth-scrollbar.js"></script>
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script id="rendered-js" src="assets/js/scroll.js"></script>
+    <script src="assets/js/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+    <script>
+        const menu = document.querySelector(".menu");
+
+        menu.addEventListener("click", () => {
+            if(menu.innerText == "menu"){
+                menu.innerText = "close";
+                document.querySelector(".menu_modal").style.transform = "translate(0, 0)";
+            } else {
+                menu.innerText = "menu";
+                document.querySelector(".menu_modal").style.transform = "translate(100%, 0)";
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -14,12 +14,12 @@
 
 <body>
     <header>
-        <div class="logo">PORTFOLIO</div>
-        <span class="menu material-symbols-outlined">menu</span>
+        <span class="logo">PORTFOLIO</span>
+        <io class="menu material-symbols-outlined">menu</io>
     </header>
-    <main id="scrollbar">
-        <!-- <div class="menu_modal"></div> -->
-        <div class="wrapper">
+    <main id="wrap">
+        <div class="menu_modal"></div>
+        <section id="section1" class="item">
             <section class="item">
                 <div class="text">
                     <h2>At Heart,
@@ -27,58 +27,100 @@
                             Portfolio Site
                         </strong>
                     </h2>
-                    <p>Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
-aliquam
-voluptates! Odio vitae eum nobis dignissimos sunt
-ipsum repellendus totam optio distinctio. Laborum
-suscipit quia aperiam.</p>
+                    <p>항공기계설계를 전공으로 공부하였고, 다양한 분야의
+업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
+국비지원학원에서 약 6개월간의 여정을 시작했습니다.
+아직은 서툴고 부족하다는 점을 알고 있습니다. </p>
                 </div>
                 <div class="section_img">
                     <div class="img"></div>
                 </div>
             </section>
-            <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
-                aliquam
-                voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
-                suscipit quia aperiam.</section>
-                <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
-                    aliquam
-                    voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
-                    suscipit quia aperiam.</section>
-                    <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
-                        aliquam
-                        voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
-                        suscipit quia aperiam.</section>
-                        <section class="item">Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa ratione ex, dicta
-                aliquam
-                voluptates! Odio vitae eum nobis dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
-                suscipit quia aperiam.</section>
+        </section>
+        <section id="section2" class="item">
+            <span class="contents_item_num">02</span>
+        </section>
+        <section id="section3" class="item">
+            <span class="contents_item_num">03</span>
+        </section>
+        <section id="section4" class="item">
+            <span class="contents_item_num">04</span>
+        </section>
+        <section id="section5" class="item">
+            <span class="contents_item_num">05</span>
+        </section>
+        <section id="section6" class="item">
+            <span class="contents_item_num">06</span>
+        </section>
+        <section id="section7" class="item">
+            <span class="contents_item_num">07</span>
+        </section>
+        <section id="section8" class="item">
+            <span class="contents_item_num">08</span>
+        </section>
+        <section id="section9" class="item">
+            <span class="contents_item_num">09</span>
+        </section>
         <div class="scroll_help">
             <p>Scroll</p>
             <div class="arrow_bg">
                 <img src="assets/img/arrow.svg" alt="arrwo">
             </div>
         </div>
-        <span class="bgt">PORTFOLIO SITE</span>
+        <div class="bgt">
+            <span>PORTFOLIO SITE</span>
         </div>
     </main>
-    <script src="assets/js/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
-    <script src="assets/js/smooth-scrollbar.js"></script>
-    <script src="assets/js/TweenMax.min.js"></script>
-    <script id="rendered-js" src="assets/js/scroll.js"></script>
-    <script src="assets/js/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+
+    <script src="js/gsap.min.js"></script>
     <script>
+        const logo = document.querySelector(".logo");
+        const wrap = document.getElementById("wrap");
+        const home = document.getElementById("section1");
         const menu = document.querySelector(".menu");
 
+        logo.addEventListener("click", (event) => {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth"
+            });
+            event.preventDefault();
+        })
+
         menu.addEventListener("click", () => {
-            if(menu.innerText == "menu"){
+            if (menu.innerText == "menu") {
                 menu.innerText = "close";
                 document.querySelector(".menu_modal").style.transform = "translate(0, 0)";
             } else {
                 menu.innerText = "menu";
-                document.querySelector(".menu_modal").style.transform = "translate(100%, 0)";
+                // document.querySelector(".menu_modal").style.transform = "translate(100%, 0)";
             }
         })
+
+        //스크롤 했을 때 left: scrollTop
+        function scroll() {
+            let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
+
+            //박스 전체 가로 값
+            let parallaxWidth = wrap.getBoundingClientRect().width;
+
+            //body의 높이값에 --> 패럴럭스 박스 전체 가로 값
+            document.body.style.height = parallaxWidth + "px";
+
+            //섹션 박스
+            let viewWidth = parallaxWidth - window.innerWidth
+            let viewHeigth = parallaxWidth - window.innerHeight
+            let goLeft = scrollTop * (viewWidth / viewHeigth)
+
+            gsap.to(wrap, {
+                left: -goLeft
+            })
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+        window.addEventListener("resize", scroll);
     </script>
 </body>
 
