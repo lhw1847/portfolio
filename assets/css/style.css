@@ -11,11 +11,13 @@ a {
 body {
   color: #fff;
   -ms-overflow-style: none;
+  font-size: 0.8373vw;
+  background: #000;
 }
 
-::-webkit-scrollbar { 
+/* ::-webkit-scrollbar { 
   display: none;
-}
+} */
 header {
   position: fixed;
   top: 0;
@@ -24,86 +26,101 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 30px;
-  font-size: 1.25em;
+  font-size: 1.24408em;
   font-weight: 700;
-  z-index: 1;
+  z-index: 2;
+  font-family: "GmarketSans";
 }
-   
+p {
+  font-family: "Chosunilbo_myungjo";
+  white-space: pre;
+  line-height: 160%;
+  font-size: 1.24408em;
+
+}
 #wrap {
   position: fixed;
   left: 0; 
   top: 0;
   display: flex;
-  background: #000;
 }
 .menu_modal {position: fixed;
-  bottom: 1000px;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background: #000;
   transform: translate(100%, 0);
   transition: all 0.5s;
+  z-index: 1;
 }
 .item {
   width: 100vw;
   height: 100vh;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  display: flex;
 }
-
+#section3 {
+  background: #fff;
+}
 #section1 {width: 100.5vw;}
-
+#section1 .item {
+  flex: none;
+}
+#section2 {
+  width: 135vw;
+}
 .item .text {
-  padding: 16.25em 8.75em;
+  padding: 24.4821vh 7.29165vw;
 }
 .item .text h2 {
-  font-size: 7.5em;
+  font-size: 7.4645em;
   font-weight: 300;
   line-height: 115%;
+  font-family: "GmarketSans";
 }
 .item .text h2 strong {
   display: block;
   font-weight: 700;
-
 }
 .item .text p {
-  font-family: "Chosunilbo_myungjo";
-  white-space: pre;
-  line-height: 160%;
-  font-size: 1.25em;
-
+  margin-top: 20px;
 }
-.item .section_img {
-  position: absolute;
-  top: 0; right: 18vw;
+.img01 {
+  position: fixed;
+  top: 0; left: 60vw;
   width: 400px;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
-.item .section_img .img {
+.img {
   position: absolute;
   top: 0; left: -50px;
   width: 500px;
   height: 100%;
-  background: url(../img/section01.png);
-  background-position: center;
-  background-size: cover;
+  transition: all 1s;
+}
+.img01 .img {
+  background: url(../img/section01.png) center / cover;
 }
 .scroll_help {
   position: fixed;
-  bottom: 5%; right: 43%;
+  bottom: 5.79vh; right: 46.49%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
 }
 .scroll_help p {
-  font-size: 1.5em;
-  margin-right: 1.5em;
+  font-size: 1.492896em;
+  margin-right: 0.75em;
+  font-family: "GmarketSans";
+  font-weight: 300;
 }
 .scroll_help .arrow_bg {
-  width: 77px;
-  height: 77px;
+  width: 4.5169em;
+  height: 4.5169em;
   background: #EF004A;
   border-radius: 50%;
   position: relative;
@@ -116,11 +133,33 @@ header {
 }
 .bgt {
   position: fixed;
-  bottom: 0; left: 90%;
-  font-size: 31.3em;
+  bottom: -25vh; left: 90%;
+  font-size: 31.3rem;
   -webkit-text-stroke: 2px #fff;
   opacity: 0.1;
   z-index: -1;
   white-space: nowrap;
   color: rgba(0, 0, 0, 0.0);
 }
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about_cont:nth-child(1) {
+  margin-right: 7.078vw;
+}
+.about .title {
+  font-family: "GmarketSans";
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+.about .about_top .about_cont:nth-child(2) .title,
+.about .about_bottom .about_cont:nth-child(2) .title {
+  margin-top: 100px;
+}
+
+
+
+.scrollTop {position: fixed; left: 20px; top: 20px; background: rgba(0,0,0,0.4); color: #fff; width: 60px; height: 30px; text-align: center; line-height: 30px; z-index: 10000;}
