@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potfolio</title>
     <style>
-        @import url(assets/css/style02.css);
+        @import url(assets/css/style.css);
         @import url(assets/css/fonts.css);
     </style>
 </head>
@@ -21,14 +21,8 @@
     <div class="img01">
         <div class="img"></div>
     </div>
-    <main id="wrap"
-    data-0="left: 0;"
-    data-5000="left: 500px;"
-    >
-        <section id="section1" class="item"
-        data-0="left: 0;"
-        data-5000="left: 5000px;"
-        >
+    <main id="wrap">
+        <section id="section1" class="item">
             <div class="text">
                 <h2>At Heart,
                     <strong>
@@ -114,18 +108,96 @@
             <span>PORTFOLIO SITE</span>
         </div>
     </main>
-    <div class="scrollTop">0</div>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/skrollr.min.js"></script>
-    <script>
-        var s = skrollr.init();
 
-        function scroll(){
-            let scrollTop = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY);
-            document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+    <script src="assets/js/gsap.min.js"></script>
+    <script>
+        
+        const logo = document.querySelector(".logo");
+        const wrap = document.getElementById("wrap");
+        const item = wrap.querySelectorAll(".item");
+        const home = document.getElementById("section1");
+        const menu = document.querySelector(".menu");
+        const img01 = document.querySelector(".img01");
+        
+
+        logo.addEventListener("click", (event) => {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth",
+            });
+            event.preventDefault();
+        })
+
+        menu.addEventListener("click", () => {
+            if (menu.innerText == "menu") {
+                menu.innerText = "close";
+                document.querySelector(".menu_modal").style.transform = "translate(0, 0)";
+            } else {
+                menu.innerText = "menu";
+                document.querySelector(".menu_modal").style.transform = "translate(100%, 0)";
+            }
+        })
+
+        function scroll(event) {
+            var section3Left = document.querySelector("#section3").getBoundingClientRect().left;
+            let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            let parallaxWidth = wrap.getBoundingClientRect().width;
+
+            document.body.style.height = parallaxWidth + "px";
+
+            let viewWidth = parallaxWidth - window.innerWidth;
+            let viewHeigth = parallaxWidth - window.innerHeight;
+            let goLeft = scrollTop * (viewWidth / viewHeigth);
+
+            gsap.to(wrap, {
+                left: -goLeft,
+            })
+            // console.log(document.querySelector("#section2 .text").getBoundingClientRect().left)
+            if(img01.getBoundingClientRect().left <= 0 && section3Left >= 0){
+                gsap.to(img01, {
+                    left: 0,
+                })
+                // console.log(window.innerWidth / (100 / 60))
+            }  
+            // if(document.querySelector("#section2").getBoundingClientRect().left >=0 && window.innerWidth / (100 / 60) >= document.querySelector("#section2").getBoundingClientRect().left) {
+            //     gsap.to(img01, {
+            //         left: goLeft,
+            //     })
+            // }
+            gsap.to(img01, {
+                    left: -goLeft + window.innerWidth / (100 / 60),
+                })
+
+            // if(img01.getBoundingClientRect().left >= 0 || 0 <= section3Left){
+            //     // console.log("first")
+            //     gsap.to(img01, {
+            //         left: -goLeft + window.innerWidth / (100 / 60),
+            //     })
+            // }
+
+            var beforePosition = document.documentElement.scrollTop
+            var afterPosition = document.documentElement.scrollTop;
+
+            if (afterPosition > 1) {
+
+            if(beforePosition < afterPosition ){
+                // 스크롤 위로 
+                img01.querySelector(".img").style.transform = "translate(-100px , 0)";
+            } else {
+                // 스크롤 아래로
+                img01.querySelector(".img").style.transform = "translate(100px , 0)";
+            }
+
+            } else {
+                // 평상 시
+                img01.querySelector(".img").style.transform = "translate(0 , 0)";
+            }
             requestAnimationFrame(scroll);
         }
         scroll();
+        window.addEventListener("resize", scroll);
+
     </script>
 </body>
 
