@@ -15,7 +15,7 @@ body {
   background: #000;
 }
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
   display: none;
 }
 header {
@@ -31,7 +31,8 @@ header {
   z-index: 2;
   font-family: "GmarketSans";
 }
-.logo, .menu {
+.logo,
+.menu {
   cursor: pointer;
 }
 p {
@@ -40,15 +41,15 @@ p {
   line-height: 160%;
   font-size: 1.24408em;
   font-weight: 300;
-
 }
 #wrap {
   position: fixed;
-  left: 0; 
+  left: 0;
   top: 0;
   display: flex;
 }
-.menu_modal {position: fixed;
+.menu_modal {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -77,7 +78,7 @@ p {
   padding: 20.7156vh 17.70835vw 0 0;
 }
 #section3 {
-  
+  width: 550vw;
 }
 #section3 .text {
   padding: 20.7156vh 17.70835vw 0 0;
@@ -103,14 +104,16 @@ p {
 }
 .img01 {
   position: absolute;
-  top: 0; left: 60vw;
+  top: 0;
+  left: 60vw;
   width: 400px;
   height: 100vh;
   overflow: hidden;
 }
 .img02 {
   position: absolute;
-  top: 0; right: 540px;
+  top: 0;
+  right: 540px;
   width: 400px;
   height: 100vh;
   overflow: hidden;
@@ -121,12 +124,14 @@ p {
   z-index: 10000;
   position: absolute;
   content: "";
-  width: 160px; height: 100px;
+  width: 160px;
+  height: 100px;
   background: #fff;
 }
 .img {
   position: absolute;
-  top: 0; left: -100px;
+  top: 0;
+  left: -100px;
   width: 600px;
   height: 100%;
   transition: all 1s;
@@ -139,26 +144,37 @@ p {
 }
 .scroll_help {
   position: fixed;
-  bottom: 5.79vh; right: 46.49%;
+  bottom: 5.79vh;
+  right: 46.49%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
 }
-.scroll_help p {
+.site_view {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+.scroll_help p,
+.site_view p {
   font-size: 1.492896em;
   margin-right: 0.75em;
   font-family: "GmarketSans";
   font-weight: 300;
 }
-.scroll_help .arrow_bg {
+.arrow_bg {
   width: 4.5169em;
   height: 4.5169em;
-  background: #EF004A;
+  background: #ef004a;
   border-radius: 50%;
   position: relative;
+  filter: none;
 }
-.scroll_help .arrow_bg img {
+.arrow_bg img {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -166,14 +182,15 @@ p {
 }
 .bgt {
   position: fixed;
-  bottom: -20vh; left: 50%;
+  bottom: -20vh;
+  left: 50%;
   font-weight: bold;
   font-size: 31.25rem;
   -webkit-text-stroke: 2px #fff;
   opacity: 0.1;
-  z-index: -1;
+  z-index: -2;
   white-space: nowrap;
-  color: rgba(0, 0, 0, 0.0);
+  color: rgba(0, 0, 0, 0);
 }
 
 .about {
@@ -192,11 +209,79 @@ p {
   font-size: 2.488155em;
   margin-bottom: 40px;
 }
-
-.site_img01 {
+.site {
+  display: flex;
+}
+.site_cont {
+  padding: 20.7156vh 0;
+}
+.site_cont > div {
+  position: relative;
   width: 890px;
   height: 500px;
-  background: url(../img/site01.png) center / cover;
-  filter: grayscale(100%);
+  overflow: hidden;
 }
-.scrollTop {position: fixed; left: 20px; top: 20px; background: rgba(0,0,0,0.4); color: #fff; width: 60px; height: 30px; text-align: center; line-height: 30px; z-index: 10000;}
+.site_cont .desc {
+  margin-top: 2.865vw;
+}
+.site_img {
+  width: 890px;
+  height: 500px;
+  filter: grayscale(100%);
+  transition: all 1s;
+}
+.site_img:hover {
+  filter: none;
+  transform: scale(1.01);
+}
+.site_cont .site_img:hover ~ a .site_view p {
+  color: #000;
+}
+.site_cont .site_img01:hover ~ a .site_view p,
+.site_cont .site_img03:hover ~ a .site_view p {
+  color: #fff;
+}
+a .site_view p {
+  transition: all 1s;
+}
+.site_img04 ~ a {
+  color: #000;
+}
+.site_img01 {
+  background: url(../img/site01.png) center / cover;
+}
+.site_img02 {
+  background: url(../img/site02.png) center / cover;
+}
+.site_img03 {
+  background: url(../img/site03.png) center / cover;
+}
+.site_img04 {
+  background: url(../img/site04.png) center / cover;
+}
+.site_img05 {
+  background: url(../img/site05.png) center / cover;
+}
+.site_introduce {
+  padding: 0 27.60415vw 0 4.94792vw;
+  font-size: 10.41665vw;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  display: inline;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #191919;
+  z-index: 1;
+}
+.scrollTop {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  z-index: 10000;
+}
