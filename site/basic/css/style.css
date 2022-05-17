@@ -772,6 +772,7 @@ body {
 /* 회원가입 */
 .join-type {
   padding: 200px 0;
+  width: 1920px;
 }
 .member-form {
   max-width: 665px;

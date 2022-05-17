@@ -122,7 +122,7 @@ p {
 #section2 .text,
 #section3 .text,
 #section4 .text {
-  padding: 20.7156vh 17.70835vw 0 0;
+  padding: 20.7156vh 17.70835vw 0 7.29165vw;
 }
 #section2 .text p,
 #section3 .text p,
@@ -166,16 +166,6 @@ p {
   height: 100vh;
   overflow: hidden;
 }
-.img02::before {
-  left: -160px;
-  top: 30%;
-  z-index: 10000;
-  position: absolute;
-  content: "";
-  width: 160px;
-  height: 100px;
-  background: #fff;
-}
 .img {
   position: absolute;
   top: 0;
@@ -185,7 +175,7 @@ p {
   transition: all 1s;
 }
 .img01 .img {
-  background: url(../img/face.png) center / cover;
+  background: url(../img/face.png) center / contain;
   filter: grayscale(0.3);
 }
 .img02 .img {
@@ -293,18 +283,9 @@ p {
   opacity: 0;
   transition: all 1s;
 }
-.site_cont .site_img:hover ~ a .site_view p {
-  color: #000;
-}
-.site_cont .site_img01:hover ~ a .site_view p,
-.site_cont .site_img03:hover ~ a .site_view p {
-  color: #fff;
-}
+
 a .site_view p {
   transition: all 1s;
-}
-.site_img04 ~ a {
-  color: #000;
 }
 .site_img01 {
   background: url(../img/site01.png) center / cover;
