@@ -12,7 +12,8 @@ li {
   list-style: none;
 }
 input,
-textarea {
+textarea,
+fieldset {
   border: 0;
   background: #000;
   color: #fff;
@@ -33,10 +34,14 @@ body {
   background: #000;
   font-family: "GmarketSans";
 }
-
-::-webkit-scrollbar {
-  display: none;
+.supah-scroll {
+  will-change: transform;
+  overflow: hidden;
 }
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
 header {
   position: fixed;
   top: 0;
@@ -76,7 +81,7 @@ p {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* transform: translate(100%, 0); */
+  transform: translate(100%, 0);
   transition: all 0.5s;
   z-index: 1;
 }
@@ -86,10 +91,14 @@ p {
 }
 .menu_modal ul {
 }
-.menu_modal ul li {
+.menu_modal > ul li {
   margin-bottom: 50px;
 }
-.menu_modal ul li span {
+.menu_modal > ul li:last-child {
+  margin-bottom: 0;
+  color: #eb2248;
+}
+.menu_modal > ul li span {
   font-size: 3.732235em;
   font-weight: 700;
   cursor: pointer;
@@ -109,6 +118,7 @@ p {
 #section2 {
   width: 188.125vw;
 }
+
 #section2 .text,
 #section3 .text,
 #section4 .text {
@@ -120,10 +130,10 @@ p {
   margin-top: 45px;
 }
 #section3 {
-  width: 550vw;
+  width: 535vw;
 }
 #section4 {
-  width: 500vw;
+  width: 655vw;
 }
 .item .text {
   padding: 26.36535vh 7.29165vw;
@@ -184,7 +194,7 @@ p {
 .scroll_help {
   position: absolute;
   bottom: 5.79vh;
-  left: 3.3%;
+  left: 2.3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -259,6 +269,10 @@ p {
   height: 500px;
   overflow: hidden;
 }
+.site_cont .site_view {
+  cursor: pointer;
+}
+
 .site_cont .desc {
   margin-top: 2.865vw;
 }
@@ -268,9 +282,16 @@ p {
   filter: grayscale(100%);
   transition: all 1s;
 }
-.site_img:hover {
+.site_cont > div:hover .site_img {
   filter: none;
   transform: scale(1.01);
+}
+.site_cont iframe {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  transition: all 1s;
 }
 .site_cont .site_img:hover ~ a .site_view p {
   color: #000;
@@ -368,6 +389,12 @@ a .site_view p {
   font-size: 1.86612em;
   font-weight: 300;
   text-transform: uppercase;
+  box-shadow: 0px 5px 5px #333;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.script_img .script_view:active {
+  box-shadow: inset 5em 1em gold;
 }
 .script_img01 {
   background: url(../img/script01.png) center / cover;
@@ -413,19 +440,30 @@ a .site_view p {
 .textbox label {
   font-size: 1.24408em;
 }
+.textbox input,
+.textbox textarea {
+  margin-left: 20px;
+  width: 70%;
+  padding-bottom: 10px;
+}
 .textbox textarea {
   resize: none;
+}
+.contact {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
 }
 .contact_btn {
   text-align: right;
 }
-.contact button {
+.contact .contact_btn button {
   font-family: "Chosunilbo_myungjo";
   font-size: 1.492895em;
   position: relative;
   margin-right: 72px;
 }
-.contact button::before {
+.contact .contact_btn button::before {
   position: absolute;
   content: "";
   right: -72px;
@@ -435,7 +473,7 @@ a .site_view p {
   background: #ef004a;
   border-radius: 50%;
 }
-.contact button::after {
+.contact .contact_btn button::after {
   position: absolute;
   content: "";
   right: -54px;
@@ -444,6 +482,19 @@ a .site_view p {
   height: 14px;
   background: url(../img/arrow2.svg);
 }
+.contact ul {
+  padding: 130px 0 0 0;
+  display: flex;
+  justify-content: end;
+}
 .contact ul li {
-  display: inline;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #460a16;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+.contact ul li button {
+  font-size: 12px;
+  background: #460a16;
 }

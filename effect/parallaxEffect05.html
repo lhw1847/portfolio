@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../../assets/face/pararllax.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/face/pararllax.png">
+    <link rel="icon" href="../../assets/face/pararllax.png" sizes="128x128">
+    
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0;}
+        a {color: #fff; text-decoration: none;}
+        body {background-color: #222; color: #fff; font-family: "NexonLv1Gothic"; font-weight: 300;}
+
+        /* parallax__title */
+        #parallax__title {padding: 20px;}
+        #parallax__title h1 {font-size: 30px; border-bottom: 1px dashed #fff; margin-bottom: 10px; padding-bottom: 5px; font-weight: 400; display: inline-block;}
+        #parallax__title p {font-size: 16px;}
+        #parallax__title ul {margin-top: 10px;}
+        #parallax__title li {display: inline;}
+        #parallax__title li a {width: 20px; height: 20px; border-radius: 50%; border: 1px dashed #fff; display: inline-block; text-align: center;line-height: 20px; font-size: 12px;}
+        #parallax__title li.active a { background: #fff; color: #000;}
+        /* //parllax__title */
+
+        /* parallax__cont */
+        #parallax__cont {max-width: 1600px; width: 98%; margin: 0 auto;}
+        .contents__item {max-width: 70vw; width: 1000px; padding-top: 15vw; margin: 30vw auto; text-align: left; margin-right: 0; position: relative;}
+        .contents__item:nth-child(even) {margin-left: 0; text-align-last: right;}
+        .contents_item_num {font-size: 35vw; font-weight: 100; position: absolute; left: -5vw; top: -13vh; opacity: 0.07; font-family: 'Lato';}
+        .contents__item:nth-child(even) .contents_item_num {left: auto; right: -5vw;}
+        .contents_item_title {padding-bottom: 5px; font-weight: 400;}
+
+        /* img */
+        .contents_item_imgWrap {width: 100%; padding-bottom: 56.25%; background: #000; position: relative; overflow: hidden;}
+        .contents_item_img {position: absolute; left: -5; top: -5; width: 110%; height: 110%; background-repeat: no-repeat; background-position: center center; background-size: cover; filter: saturate(0%);}
+             /* transition: all 1s;} */
+        .contents_item_img:hover {filter: saturate(100%); transform: scale(1.025);}
+        .contents__item:nth-child(1) .contents_item_img {background-image: url(img/imges01.png);}
+        .contents__item:nth-child(2) .contents_item_img {background-image: url(img/imges02.jpg);}
+        .contents__item:nth-child(3) .contents_item_img {background-image: url(img/imges03.jpg);}
+        .contents__item:nth-child(4) .contents_item_img {background-image: url(img/imges04.jpg);}
+        .contents__item:nth-child(5) .contents_item_img {background-image: url(img/imges05.jpg);}
+        .contents__item:nth-child(6) .contents_item_img {background-image: url(img/imges06.jpg);}
+        .contents__item:nth-child(7) .contents_item_img {background-image: url(img/imges07.jpg);}
+        .contents__item:nth-child(8) .contents_item_img {background-image: url(img/imges08.jpg);}
+        .contents__item:nth-child(9) .contents_item_img {background-image: url(img/imges09.jpg);}
+
+        /* desc */
+        .contents_item_desc {font-size: 4vw; line-height: 1.4; margin-top: -5vw; margin-left: -4vw; position: relative; z-index: 100; word-break: keep-all;}
+        .contents__item:nth-child(even) .contents_item_desc {margin-left: auto; margin-right: -4vw; text-align: right;}
+
+        /* info */
+        .scrollTop {position: fixed; left: 20px; bottom: 20px; z-index: 1000; background: rgba(0,0,0,0.4); color: #fff; padding: 10px 30px; border-radius: 50px;}
+        .scrollInfo {position: fixed; left: 20px; bottom: 70px; z-index: 1000; background: rgba(0,0,0,0.4); padding: 10px 30px; border-radius: 10px;}
+        .scrollInfo li {list-style: none; line-height: 1.6;}
+    </style>
+</head>
+<body>
+    <!-- parallax__title -->
+    <header id="parallax__title">
+        <h1><a href="parallaxEffect.html">Javascript Parallax Effect05</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 이질감 효과</p>
+        <ul>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li><a href="parallaxEffect04.html">4</a></li>
+            <li class="active"><a href="parallaxEffect05.html">5</a></li>
+            <li><a href="parallaxEffect06.html">6</a></li>
+            <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallaxEffect08.html">8</a></li>
+            <li><a href="parallaxEffect09.html">9</a></li>
+        </ul>
+    </header>
+    <!-- //parallax__title -->
+
+    <!-- parallax__cont -->
+    <main id="parallax__cont">
+        <div id="contents">
+                <section id="section1" class="contents__item">
+                    <span class="contents_item_num">01</span>
+                    <h2 class="contents_item_title">section01</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">질병은 입을 쫓아 들어가고 화근은 입을 좇아 나온다.</p>
+                </section>
+                <!-- //section01 -->
+                <section id="section2" class="contents__item">
+                    <span class="contents_item_num">02</span>
+                    <h2 class="contents_item_title">section02</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">끝을 맺기를 처음과 같이 하면 실패가 없다.</p>
+                </section>
+                <!-- //section02 -->
+                <section id="section3" class="contents__item">
+                    <span class="contents_item_num">03</span>
+                    <h2 class="contents_item_title">section03</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">지혜는 듣는 데서 오고 후회는 말하는 데서 온다.</p>
+                </section>
+                <!-- //section03 -->
+                <section id="section4" class="contents__item">
+                    <span class="contents_item_num">04</span>
+                    <h2 class="contents_item_title">section04</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">말을 많이 하는 것과 말을 잘하는 것은 다르다.</p>
+                </section>
+                <!-- //section04 -->
+                <section id="section5" class="contents__item">
+                    <span class="contents_item_num">05</span>
+                    <h2 class="contents_item_title">section05</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">탐욕은 일체를 얻고자 욕심내어서 도리어 모든 것을 잃어버린다.</p>
+                </section>
+                <!-- //section05 -->
+                <section id="section6" class="contents__item">
+                    <span class="contents_item_num">06</span>
+                    <h2 class="contents_item_title">section06</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">타인에 대한 존경은 처세법의 제일 조건이다.</p>
+                </section>
+                <!-- //section06 -->
+                <section id="section7" class="contents__item">
+                    <span class="contents_item_num">07</span>
+                    <h2 class="contents_item_title">section07</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">최대 다수의 최대 행복을 얻는 행동이 최선이다. </p>
+                </section>
+                <!-- //section07 -->
+                <section id="section8" class="contents__item">
+                    <span class="contents_item_num">08</span>
+                    <h2 class="contents_item_title">section08</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">햇빛은 하나의 초점에 모아질 때만 불꽃을 피우는 것이다.</p>
+                </section>
+                <!-- //section08 -->
+                <section id="section9" class="contents__item">
+                    <span class="contents_item_num">09</span>
+                    <h2 class="contents_item_title">section09</h2>
+                    <figure class="contents_item_imgWrap">
+                        <div class="contents_item_img"></div>
+                    </figure>
+                    <p class="contents_item_desc">기다림만으로 사는 사람은 굶어서 죽는다. </p>
+                </section>
+                <!-- //section09 -->
+        </div>
+    </main>
+    <!-- //parallax__cont -->
+
+    <!-- infor -->
+    <div class="scrollTop">
+        scrollTop : <span>0</span>px
+    </div>
+    <!-- //info -->
+
+    <!-- script -->
+    <script src="js/gsap.min.js"></script>
+    <script>
+        function scroll(){
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop span"). innerText = Math.round(scrollTop);
+
+            // const img = document.querySelector("#section1 .contents_item_img");
+            // img.style.transform = "translateY("+scrollTop/10+"px)";
+             
+            document.querySelectorAll(".contents__item").forEach(item => {
+                let offset1 = (scrollTop - item.offsetTop) * 0.1;
+                let offset2 = (scrollTop - item.offsetTop) * 0.15;
+
+                const target1 = item.querySelector(".contents_item_img");
+                const target2 = item.querySelector(".contents_item_desc");
+
+                // target1.style.transform = `translateY(${offset1}px)`;
+                // target2.style.transform = `translateY(${offset2}px)`;
+
+                gsap.to(target1, {duration: .3, y: offset1, ease: "power1.out"});
+                gsap.to(target2, {duration: .3, y: offset2, ease: "power1.out"});
+            })
+             requestAnimationFrame(scroll);
+        }
+        scroll();
+     </script>
+</body>
+</html>
