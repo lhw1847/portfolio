@@ -45,6 +45,9 @@ class SupahScroll {
   animate() {
     this.scrollY += (window.scrollY - this.scrollY) * this.speed;
     this.supahScroll.style.transform = `translate3d(${-this.scrollY}px,0,0)`;
+    // if (screenX >= 1000) {
+    //   this.supahScroll.style.transform = `translate3d(0,${-this.scrollY}px,0)`;
+    // }
     this.raf = requestAnimationFrame(this.animate.bind(this));
   }
 

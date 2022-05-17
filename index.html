@@ -18,54 +18,56 @@
         <io class="menu material-symbols-outlined">menu</io>
     </header>
     <div class="menu_modal">
-        <ul>
-            <li>
-                <div class="num">01</div>
-                <span class="moveAbout">ABOUT</span>
-            </li>
-            <li>
-                <div class="num">02</div>
-                <span class="moveSite">SITE</span>
-            </li>
-            <li>
-                <div class="num">03</div>
-                <span class="moveScript">SCRIPT</span>
-            </li>
-            <li>
-                <div class="num">04</div>
-                <span class="moveStudied">STUDIED</span>
-            </li>
-            <li>
-                <div class="num">05</div>
-                <span class="moveContact">CONTACT</span>
-            </li>
-        </ul>
-        <div class="contact">
-            <form action="">
-                <fieldset>
-                    <div class="textbox">
-                        <label for="">Name*</label><input type="text">
-                    </div>
-                    <div class="textbox">
-                        <label for="">Email Id*</label><input type="text">
-                    </div>
-                    <div class="textbox">
-                        <label for="">Mobile*</label><input type="text">
-                    </div>
-                    <div class="textbox">
-                        <label for="">Message*</label><textarea name="" id="" rows="1"></textarea>
-                    </div>
-                    <div class="contact_btn">
-                        <button type="submit">Submit</button>
-                    </div>
-                </fieldset>
-            </form>
+        <div class="menu_info">
             <ul>
-                <li><button>CSS</button></li>
-                <li><button>HTML</button></li>
-                <li><button>ALGORITHM</button></li>
-                <li><button>BLOG</button></li>
+                <li>
+                    <div class="num">01</div>
+                    <span class="moveAbout">ABOUT</span>
+                </li>
+                <li>
+                    <div class="num">02</div>
+                    <span class="moveSite">SITE</span>
+                </li>
+                <li>
+                    <div class="num">03</div>
+                    <span class="moveScript">SCRIPT</span>
+                </li>
+                <li>
+                    <div class="num">04</div>
+                    <span class="moveStudied">STUDIED</span>
+                </li>
+                <li>
+                    <div class="num">05</div>
+                    <span class="moveContact">CONTACT</span>
+                </li>
             </ul>
+            <div class="contact">
+                <form action="">
+                    <fieldset>
+                        <div class="textbox">
+                            <label for="">Name*</label><input type="text">
+                        </div>
+                        <div class="textbox">
+                            <label for="">Email Id*</label><input type="text">
+                        </div>
+                        <div class="textbox">
+                            <label for="">Mobile*</label><input type="text">
+                        </div>
+                        <div class="textbox">
+                            <label for="">Message*</label><textarea name="" id="" rows="1"></textarea>
+                        </div>
+                        <div class="contact_btn">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <ul>
+                    <li><button>CSS</button></li>
+                    <li><button>HTML</button></li>
+                    <li><button>ALGORITHM</button></li>
+                    <li><button>BLOG</button></li>
+                </ul>
+            </div>
         </div>
     </div>
     <main id="wrap">
@@ -183,9 +185,9 @@ swiper 플러그인을 이용하여 이미지 슬라이드를 구현했습니다
                 <div class="site_cont">
                     <div>
                         <div class="site_img site_img03">
-                            <iframe src="" frameborder="0"></iframe>
+                            <iframe src="http://leehyunwoo.dothome.co.kr/php%20copy/pages/main.php" frameborder="0"></iframe>
                         </div>
-                        <a target="_blank" href="https://lhw1847.github.io/webs_class/site/webClass/index.html">
+                        <a target="_blank" href="http://leehyunwoo.dothome.co.kr/php/pages/main.php">
                             <div class="site_view">
                                 <p>SITE VIEW</p>
                                 <div class="arrow_bg">
@@ -556,10 +558,18 @@ setTimeout을 활용하여 자동적으로
             if (menu.innerText == "menu") {
                 menu.innerText = "close";
                 document.querySelector(".menu_modal").style.transform = "translate(0, 0)";
+                setTimeout(() => {
+                    document.querySelector(".menu_info").style.opacity = 1;
+                }, 500);
                 event.preventDefault();
             } else {
                 menu.innerText = "menu";
-                document.querySelector(".menu_modal").style.transform = "translate(100%, 0)";
+                setTimeout(() => {
+                    document.querySelector(".menu_info").style.opacity = 0;
+                }, 10);
+                setTimeout(() => {
+                    document.querySelector(".menu_modal").style.transform = "translate(100%, 0)";
+                }, 500);
                 event.preventDefault();
             }
         })
