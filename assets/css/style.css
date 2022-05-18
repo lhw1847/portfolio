@@ -40,9 +40,9 @@ body {
   overflow: hidden;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-} */
+}
 header {
   position: fixed;
   top: 0;
@@ -143,7 +143,13 @@ p {
   width: 535vw;
 }
 #section4 {
-  width: 655vw;
+  width: 673.8vw;
+}
+#section5 {
+  
+}
+#section5 .text {
+  padding: 180px 17.70835vw 0 7.29165vw;
 }
 .item .text {
   padding: 26.36535vh 7.29165vw;
@@ -157,9 +163,7 @@ p {
   display: block;
   font-weight: 700;
 }
-.item .text p {
-  /* margin-top: 20px; */
-}
+
 .img01 {
   position: absolute;
   top: 15%;
@@ -286,12 +290,15 @@ p {
   filter: none;
   transform: scale(1.01);
 }
-.site_cont iframe {
+iframe {
   width: 100%;
   height: 100%;
   background: #fff;
   opacity: 0;
+  transform: scale(0);
+  z-index: 1;
   transition: all 1s;
+  transform: scale(1);
 }
 
 a .site_view p {
@@ -478,7 +485,7 @@ a .site_view p {
   display: flex;
   justify-content: end;
 }
-.contact ul li {
+.contact ul li, .cate {
   display: inline-block;
   padding: 10px 20px;
   background: #460a16;
@@ -489,7 +496,54 @@ a .site_view p {
   font-size: 12px;
   background: #460a16;
 }
-
+.studied {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.studied_cont {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 50px;
+}
+.studied_cont:last-child {
+  margin-bottom: 0;
+}
+.cate {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+.studied_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.studied_item .title strong {
+  font-size: 1.86612em;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.studied_item .title p {
+  font-size: 1.24408em;
+  margin-bottom: 20px;
+}
+.studied .arrow {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #ef004a;
+  border-radius: 50%;
+}
+.studied .arrow::before {
+  position: absolute;
+  content: "";
+  right: 0; left: 0;
+  bottom: 0; top: 0;
+  width: 13px;
+  height: 14px;
+  margin: auto;
+  background: url(../img/arrow2.svg);
+}
 @media (max-width: 700px) {
   #wrap {
     flex-direction: column;
