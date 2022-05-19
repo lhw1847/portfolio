@@ -217,6 +217,11 @@ figure {
     width: 100vw;
     height: 100vh;
 }
+.slide2 {
+    display: flex;
+    width: 160vw;
+    height: 100vh;
+}
 
 .slide--1 {
     align-items: flex-start;
@@ -455,4 +460,21 @@ img {
   .img01 .img {
     background: url(../img/face.png) center / contain no-repeat;
     filter: grayscale(0.3);
+  }
+
+
+  .about {
+    display: flex;
+    justify-content: space-between;
+    padding: 20.7156vh 0;
+  }
+  .about_cont {
+    height: 300px;
+  }
+  .about_cont:nth-child(1) {
+    margin-right: 7.078vw;
+  }
+  .about .title {
+    font-size: 2.488155em;
+    margin-bottom: 40px;
   }
