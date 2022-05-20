@@ -506,7 +506,48 @@ text.title {
   .site_cont .site_view {
     cursor: pointer;
   }
-  
+  .site_view {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+  .scroll_help p,
+  .site_view p {
+    font-family: "GmarketSans";
+    font-size: 1.492896em;
+    margin-right: 0.75em;
+    font-weight: 300;
+  }
+  .arrow_bg {
+    width: 4.5169em;
+    height: 4.5169em;
+    background: #ef004a;
+    border-radius: 50%;
+    position: relative;
+    filter: none;
+  }
+  .arrow_bg img {
+      width: 19px; height: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bgt {
+    position: fixed;
+    bottom: -20vh;
+    left: 50%;
+    font-weight: bold;
+    font-size: 31.25rem;
+    -webkit-text-stroke: 2px #fff;
+    opacity: 0.1;
+    z-index: -2;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0);
+  }
   .site_cont .desc {
     margin-top: 2.865vw;
   }
@@ -520,17 +561,6 @@ text.title {
     filter: none;
     transform: scale(1.01);
   }
-  iframe {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    /* opacity: 0; */
-    transform: scale(0);
-    z-index: 999;
-    transition: all 1s;
-    transform: scale(1);
-  }
-  
   a .site_view p {
     transition: all 1s;
   }
