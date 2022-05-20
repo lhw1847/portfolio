@@ -216,7 +216,6 @@ iframe {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #111;
     transform: translate3d(-100%, 0, 0);
     transition: transform 0.75s ease;
     z-index: 2;
@@ -246,7 +245,7 @@ iframe {
     height: 100vh;
     display: flex;
 }
-.slide.about {
+.slide.silde1 {
     align-items: center;
     justify-content: space-evenly;
 }
@@ -258,6 +257,9 @@ iframe {
 }
 .slide.slide_title {
     width: 69.5vw;
+}
+.slide.script {
+    width: 600vw;
 }
 
 .slide__inner {
@@ -589,4 +591,87 @@ text.title {
     font-weight: 700;
     color: #191919;
     z-index: 1;
+  }
+
+  .script {
+    display: flex;
+  }
+  .script_cont {
+    display: flex;
+  }
+  .script_cont:nth-child(even) .title {
+    margin-top: 13.2392vh;
+  }
+  .script_cont:nth-child(even) .script_img {
+    margin-top: 10vh;
+  }
+  .script_cont:nth-child(even) .script_img .script_view {
+    top: 5%;
+  }
+  .script_text .title {
+    font-size: 1.86612em;
+    font-weight: 300;
+    margin-top: 52.7307vh;
+  }
+  .script_text .title strong {
+    display: block;
+  }
+  .script_img {
+    position: relative;
+    width: 32.813vw;
+    height: 90vh;
+    margin-left: 40px;
+    margin-right: 275px;
+  }
+  .script_img .script_view {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: 5em;
+    height: 5em;
+    background: #ef004a;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.86612em;
+    font-weight: 300;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 5px #333;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .script_view strong {
+      pointer-events: none;
+  }
+  .script_img .script_view:active {
+    box-shadow: inset 5em 1em gold;
+  }
+  .script_img01 {
+    background: url(../img/script01.png) center / cover;
+  }
+  .script_img02 {
+    background: url(../img/script02.png) center / cover;
+  }
+  .script_img03 {
+    background: url(../img/script03.png) center / cover;
+  }
+  .script_img04 {
+    background: url(../img/script04.png) center / cover;
+  }
+  .script_img05 {
+    background: url(../img/script05.png) center / cover;
+  }
+  .script_img06 {
+    background: url(../img/script06.png) center / cover;
+  }
+  .script_img07 {
+    background: url(../img/script07.png) center / cover;
+  }
+  .script_img08 {
+    background: url(../img/script08.png) center / cover;
+  }
+  .script_img09 {
+    background: url(../img/script09.png) center / cover;
   }
