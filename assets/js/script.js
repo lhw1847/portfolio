@@ -1,12 +1,9 @@
-// window.onload = function () {
+// window.onload = function(){
 //   setTimeout(() => {
-//     document.querySelector(".hi").style.opacity = 1;
-//     document.querySelector(".logo--top").style.opacity = 1;
-//     document.querySelector(".menu-btn").style.opacity = 1;
-//     document.querySelector(".filter").style.opacity = 1;
-//     document.querySelector(".scroll-content--last").style.opacity = 1;
-//   }, 500);
+//     alert("sd")
+//   }, createTimeline());
 // }
+
 const math = {
   lerp: (a, b, n) => {
     return (1 - n) * a + n * b;
@@ -234,9 +231,13 @@ class Transition {
       logo: document.querySelector('.js-logo'),
       images: [...document.querySelectorAll('.js-transition-img')],
       imagesInner: [...document.querySelectorAll('.js-transition-img__inner')],
-      titles: [...document.querySelectorAll('.js-transition-title')]
+      titles: [...document.querySelectorAll('.js-transition-title')],
+      hi: [document.querySelector(".hi")],
+      logotop: [document.querySelector(".logo--top")],
+      menubtn: [document.querySelector(".menu-btn")],
+      filter: [document.querySelector(".filter")],
+      scrollcontentlast: [document.querySelector(".scroll-content--last")],
     };
-
 
     this.tl = null;
 
@@ -289,6 +290,21 @@ class Transition {
 
 
     this.tl.
+    set(this.dom.hi, {
+      autoAlpha: 0
+    }).
+    set(this.dom.logotop, {
+      autoAlpha: 0
+    }).
+    set(this.dom.menubtn, {
+      autoAlpha: 0
+    }).
+    set(this.dom.filter, {
+      autoAlpha: 0
+    }).
+    set(this.dom.scrollcontentlast, {
+      autoAlpha: 0
+    }).
     set([this.dom.images, this.dom.imagesInner], {
       xPercent: 0,
       scale: 1
@@ -336,6 +352,21 @@ class Transition {
       yPercent: 0,
       rotation: 0,
       ease: Expo.easeOut
+    }).
+    set(this.dom.hi, {
+      autoAlpha: 1
+    }).
+    set(this.dom.logotop, {
+      autoAlpha: 1
+    }).
+    set(this.dom.menubtn, {
+      autoAlpha: 1
+    }).
+    set(this.dom.filter, {
+      autoAlpha: 1
+    }).
+    set(this.dom.scrollcontentlast, {
+      autoAlpha: 1
     }).
 
     staggerFromTo(this.dom.lines, 1, {

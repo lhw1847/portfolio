@@ -6,7 +6,7 @@
     font-style: normal;
 }
 .scroll-content--last, .hi, .logo--top, .menu-btn, .filter {
-  
+  opacity: 0;
 }
 * {
     margin: 0;
