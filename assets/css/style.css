@@ -9,7 +9,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    user-select: none;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 html.has-scroll-smooth {
     overflow: hidden;
 }
@@ -46,10 +51,6 @@ body {
 h1,
 h2 {
     font-weight: normal;
-}
-
-* {
-    box-sizing: border-box;
 }
 p {
     font-family: "Chosunilbo_myungjo";
@@ -89,6 +90,7 @@ iframe {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
 }
 
 .hi {
@@ -99,6 +101,7 @@ iframe {
     font-size: 1vw;
     z-index: 999;
     text-decoration: none;
+    opacity: 0;
 }
 
 .logo {
@@ -110,6 +113,7 @@ iframe {
     top: 2vw;
     left: 2vw;
     z-index: 10;
+    opacity: 0;
 }
 
 .logo--top img {
@@ -147,6 +151,7 @@ iframe {
     align-items: center;
     text-decoration: none;
     z-index: 999;
+    opacity: 0;
 }
 
 .menu-btn__circles {
@@ -168,7 +173,7 @@ iframe {
 }
 
 .menu-btn__circle--top {
-    visiblity: hidden;
+    visibility: hidden;
     opacity: 0;
 }
 
@@ -178,6 +183,7 @@ iframe {
 }
 
 .filter {
+    opacity: 0;
     position: absolute;
     top: 7.5%;
     left: 50%;
@@ -353,6 +359,7 @@ img {
 .mask__slice {
     flex: 1;
     background-color: #000;
+    transition: all 0.1s;
 }
 
 .mask__inner {
@@ -513,6 +520,17 @@ text.title {
     filter: none;
     transform: scale(1.01);
   }
+  iframe {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* opacity: 0; */
+    transform: scale(0);
+    z-index: 999;
+    transition: all 1s;
+    transform: scale(1);
+  }
+  
   a .site_view p {
     transition: all 1s;
   }

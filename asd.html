@@ -1,1019 +1,157 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            height: 100vh;
-            background-size: 20px 20px;
-            background-image: 
-                repeating-radial-gradient( white 0px, black 2px, black 48px);
-            overflow: hidden;
-        }
-        canvas{
-            position:absolute;
-            top:0;
-            left:0;
-            z-index: -1;
-        }
-        button {
-            border: 0;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .tetris__wrap {
-            margin: 0 auto;
-            text-align: center;
-        }
-        li {
-            list-style: none;
-            background: rgb(255, 255, 255);
-        }
-        .start__btn, 
-        .info__box, 
-        .result__box {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 5px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
-                        0 6px 10px 0 rgba(0,0,0,0.17);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-        }
-        .start__btn,
-        .start__box.active, 
-        .info__box.active, 
-        .result__box.active {
-            opacity: 1;
-          z-index: 10;
-          pointer-events: auto;
-          transform: translate(-50%, -50%) scale(0.8);
-        }
-
-        
-        .start__btn button {
-            background: #fff;
-            padding: .8rem 3rem;
-            border-radius: 5px;
-            font-size: 1.3em;
-        }
-
-        .info__box {
-            width: 500px;
-            background: #fff;
-            border-radius: 5px;
-            font-size: 1.3em;
-        }
-        .info__box .title {
-            border-bottom: 1px solid #ccc;
-            padding: .8rem 2rem;
-            text-align: center;
-            font-size: 1.4em;
-        }
-        .info__box .list ol {
-            padding: 1.3rem 3rem;
-        }
-        .info__box .buttons {
-            border-top: 1px solid #ccc;
-            padding: .8rem 2rem;
-            text-align: center;
-        }
-        .info__box .buttons button {
-            background: #007BFF;
-            color: #fff;
-            padding: .4rem 2rem;
-            border-radius: 5px;
-            font-size: 1em;
-            border: 1px solid #007BFF;
-            margin: 0 0.2rem;
-            display: inline-block;
-        }
-        .info__box .buttons button:first-child {
-            background: #fff;
-            border: 1px solid #007BFF;
-            color: #007BFF
-        }
-
-        .result__box {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.8);
-            color: #fff;
-            border-radius: 5px;
-            font-size: 1.3em;
-            z-index: 100;
-        }
-        .result__box .title {
-            border-bottom: 1px solid #ccc;
-            padding: .8rem 2rem;
-            text-align: center;
-            font-size: 1.4em;
-        }
-        .result__box .score {
-          padding: 2rem;
-          text-align: center;
-          height: 150px;
-        }
-        .result__box .buttons {
-            border-top: 1px solid #ccc;
-            padding: .8rem 2rem;
-            text-align: center;
-        }
-        .result__box .buttons button {
-            background: #007BFF;
-            color: #fff;
-            padding: .4rem 2rem;
-            border-radius: 5px;
-            font-size: 1em;
-            border: 1px solid #007BFF;
-            margin: 0 0.2rem;
-            display: inline-block;
-        }
-        .result__box .buttons button:first-child {
-            background: #fff;
-            border: 1px solid #007BFF;
-            color: #007BFF
-        }
-        .start__btn {
-            display: none;
-        }
-        .tetris__inner {
-            width: 250px;
-            margin: 30px auto;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%, -50%);
-        }
-        .tetris__inner > ul {
-            border: 3px solid #ccc;
-        }
-        .tetris__inner > ul > li {
-            width: 100%;
-            height: 25px;
-        }
-        .tetris__inner > ul > li > ul {
-            display: flex;
-        }
-        .tetris__inner > ul > li > ul > li {
-            width: 25px;
-            height: 25px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        .Tmino {
-            border: 6px outset #a042a2 !important;
-            background-color: #952d98;
-        }
-        .Imino {
-            border: 6px outset #1aa9de !important;
-            background-color: #009fda;
-        }
-        .Omino {
-            border: 6px outset #fed01a !important;
-            background-color: #fecb00;
-        }
-        .Zmino {
-            border: 6px outset #ef3e4d !important;
-            background-color: #ed2939;
-        }
-        .Smino {
-            border: 6px outset #78c53e !important;
-            background-color: #69be28;
-        }
-        .Jmino {
-            border: 6px outset #1a74c4 !important;
-            background-color: #0065bd;
-        }
-        .Lmino {
-            border: 6px outset #ff861a !important;
-            background-color: #ff7900;
-        }
-
-        .tetris__wrap .s {
-            color: #fff;
-            font-size: 24px;
-            text-align: center;
-            margin-top: 150px;
-        }
-    </style>
-</head>
-<body>
-    <canvas></canvas>
-
-        <!-- 시작버튼 -->
-        <div class="start__btn">
-            <button>Start</button>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <title>뷰사이트</title>
+  </head>
+  <body>
+    <div id="vue_wrap">
+      <section id="vue" class="load pagemove">
+        <div class="p10 h1 lh_75">
+          <!-- 1 -->
+          <div class="pagenum">
+            <a href="../react/index.html" class="link"
+              ><img src="img/link1_w.svg" alt="1" class="w1" /><img
+                src="img/link1_b.svg"
+                alt="1"
+                class="b1"
+            /></a>
+            <a href="#3"
+              ><img src="img/link2_w.svg" alt="2" class="w2" /><img
+                src="img/link2_b.svg"
+                alt="2"
+                class="b2"
+            /></a>
+          </div>
+          <h1>vue.js</h1>
         </div>
-
-
-        <!-- 규칙 박스 -->
-        <div class="info__box">
-            <div class="title">메모리 게임을 하기 위한 규칙</div>
-            <div class="list">
-                <ol>
-                    <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
-                </ol>
-            </div>
-            <div class="buttons">
-                <button class="stop">그만하기</button>
-                <button class="start">도전하기</button>
-            </div>
+        <div>
+          <!-- 2 -->
         </div>
-
-        <!-- 결과 박스 -->
-        <div class="result__box">
-            <div class="title">게임이 끝났습니다!</div>
-            <div class="score">
-                당신의 점수는 <span>0</span>
-                 점입니다.
-            </div>
-            <div class="buttons">
-                <button class="stop">그만하기</button>
-                <button class="restart">다시 도전하기</button>
-            </div>
+        <div class="p10">
+          <!-- 3 -->
+          <a href="../main/index3.html" class="movelink link">
+            <h2>home</h2>
+            <img src="img/Arrow.svg" alt="화살표" />
+          </a>
         </div>
-
-        <!-- 테트리스 박스 -->
-        <div class="tetris__wrap">
-            <div class="s"><span>0</span></div>
-            <div class="tetris__inner">
-                <ul></ul>
-            </div>
+        <div class="p10">
+          <!-- 4 -->
+          <a href="#3" class="movelink link">
+            <h2>animation</h2>
+            <img src="img/Arrow.svg" alt="화살표" />
+          </a>
         </div>
-
+        <div class="p10">
+          <!-- 5 -->
+          <h2>REACT, VUE</h2>
+          <p class="p">
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+          </p>
+        </div>
+        <div>
+          <!-- 6 -->
+        </div>
+        <div>
+          <!-- 7 -->
+        </div>
+        <div>
+          <!-- 8 -->
+        </div>
+        <div class="black p20">
+          <!-- 9 -->
+          <p class="font_cho lh_160 fz20">
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼<br /><br />
+            자바스크립트 React는 상호작용이 많은 UI를 만들 때 생기는 어려움을
+            줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요.
+            그럼 React는 데이터가 변경됨에 따라 적절한 컴포넌트만 효율적으로
+            갱신하고 렌더링합니다. 기술 스택의 나머지 부분에는 관여하지 않기
+            때문에, 기존 코드를 다시 작성하지 않고도 React의 새로운 기능을
+            이용해 개발할 수 있습니다. React 컴포넌트는 render()라는 메서드를
+            구현하는데, 이것은 데이터를 입력받아 화면에 표시할 내용을 반환하는
+            역할을 합니다. 이 예제에서는 XML과 유사한 문법인 JSX를 사용합니다.
+            컴포넌트로 전달된 데이터는 render() 안에서 this.props를 통해 접근할
+            수 있습니다. 컴포넌트는 this.props를 이용해 입력 데이터를 다루는 것
+            외에도 내부적인 상태 데이터를 가질 수 있습니다. 이는 this.state로
+            접근할 수 있습니다. 컴포넌트의 상태 데이터가 바뀌면 render()가 다시
+            호출되어 마크업이 갱신됩니다.
+          </p>
+        </div>
+        <div>
+          <!-- 10 -->
+        </div>
+        <div>
+          <!-- 11 -->
+        </div>
+        <div>
+          <!-- 12 -->
+        </div>
+        <div>
+          <!-- 13 -->
+        </div>
+        <div>
+          <!-- 14 -->
+        </div>
+        <div class="p10">
+          <!-- 15 -->
+          <h2>CODE VIEW</h2>
+          <p class="p">
+            무슨 무슨 기술을 사용하여 만든 소스를 깃을 통해 볼 수 있습니다.
+          </p>
+        </div>
+        <div class="p10">
+          <!-- 16 -->
+          <h2>SITE VIEW</h2>
+          <p class="p">네티파이에 올린 파일을 직접 볼 수 있습니다.</p>
+        </div>
+      </section>
     </div>
+
     <script>
-        const tetrisWrap = document.querySelector(".tetris__wrap");
-        const startBtn = document.querySelector(".start__btn");
-        const tetrisInner = document.querySelector(".tetris__inner > ul");
-        const tetrisS = document.querySelector(".tetris__wrap .s");
-        const infoBox = document.querySelector(".info__box");
-        const infoBoxStart = infoBox.querySelector(".start");
-        const resultBox = document.querySelector(".result__box");
-        const resultS = resultBox.querySelector(".score span");
-        const resultBoxRestart = resultBox.querySelector(".restart");
-        const tetrisSS = document.querySelector(".result__box .s span");
+      const link = document.querySelector("#vue .link"); //a href
+      const Box = document.querySelectorAll("#vue div");
 
-        const game_rows = 20;
-        const game_cols = 10;
-
-        let gameScore = 0;
-        let gameDuration = 500;
-        let gameInterval;
-        let gameMovingItem;
-
-        const blocks = {
-            Tmino : [
-                [[2,1],[0,1],[1,0],[1,1]],
-                [[2,1],[1,2],[1,0],[1,1]],
-                [[1,2],[0,1],[2,1],[1,1]],
-                [[1,2],[0,1],[1,0],[1,1]],
-               
-            ],
-            Imino : [
-                [[0,0],[0,1],[0,2],[0,3]],
-                [[0,0],[1,0],[2,0],[3,0]],
-                [[0,0],[0,1],[0,2],[0,3]],
-                [[0,0],[1,0],[2,0],[3,0]]
-            ],
-            Omino : [
-                [[0,0],[0,1],[1,0],[1,1]],
-                [[0,0],[0,1],[1,0],[1,1]],
-                [[0,0],[0,1],[1,0],[1,1]],
-                [[0,0],[0,1],[1,0],[1,1]]
-            ],
-            Zmino : [
-                [[0,0],[1,0],[1,1],[2,1]],
-                [[0,2],[1,0],[1,1],[0,1]],
-                [[0,0],[1,0],[1,1],[2,1]],
-                [[0,2],[1,0],[1,1],[0,1]]
-            ],
-            Smino : [
-                [[1,0],[2,0],[0,1],[1,1]],
-                [[0,0],[0,1],[1,1],[1,2]],
-                [[1,0],[2,0],[0,1],[1,1]],
-                [[0,0],[0,1],[1,1],[1,2]]
-            ],
-            Jmino : [
-                [[0,2],[1,0],[1,1],[1,2]],
-                [[0,0],[0,1],[1,1],[2,1]],
-                [[0,0],[1,0],[0,1],[0,2]],
-                [[0,0],[1,0],[2,0],[2,1]],
-            ],
-            Lmino : [
-                [[0,0],[0,1],[0,2],[1,2]],
-                [[0,0],[1,0],[2,0],[0,1]],
-                [[0,0],[1,0],[1,1],[1,2]],
-                [[2,0],[0,1],[1,1],[2,1]],
-            ],
+      window.onload = function () {
+        function pageon() {
+          setTimeout(() => {
+            document.getElementById("vue").classList.remove("pagemove");
+            //callback();
+          }, 100);
         }
-
-        const movingItem = {
-            type: "Zmino",
-            direction: 0,
-            top: 0,
-            left: 3,
-        }
-        // console.log(tetrisInner.childNodes)
-        init()
-
-        // 시작 버튼
-    startBtn.onclick = () => {
-      infoBox.classList.add("active");
-      startBtn.classList.remove("active");
-    };
-
-    // 게임시작 버튼
-    infoBoxStart.onclick = () => {
-      tetrisWrap.classList.add("active");
-      setTimeout(() => {
-        infoBox.classList.remove("active");
-        init();
-      }, 1000);
-    };
-
-    // 게임 다시 시작 버튼
-    resultBoxRestart.onclick = () => {
-      tetrisInner.innerHTML = "";
-      resultBox.classList.remove("active");
-      tetrisWrap.classList.add("active");
-      let gameScore = 0;
-      init();
-    };
-
-        // 블록 만들기
-        function tetrisLine(){
-            const li = document.createElement("li");
-            const ul = document.createElement("ul");
-            for(let j=0; j<game_cols; j++){
-                const block = document.createElement("li");
-                ul.prepend(block);
-            }
-            li.prepend(ul)
-            tetrisInner.prepend(li);
-        }
-
-        // 블록 출력하기
-        function renderBlocks(moveType = " "){
-            const {type, direction, top, left} = gameMovingItem;
-
-            const movingBlocks = document.querySelectorAll(".moving");
-            movingBlocks.forEach(moving => {
-                moving.classList.remove(type, "moving");
-            })
-
-            blocks[type][direction].some(block => {
-                const x = block[0] + left;
-                const y = block[1] + top;
-                //console.log(tetrisInner)
-                const target = tetrisInner.childNodes[y] ? tetrisInner.childNodes[y].childNodes[0].childNodes[x] : null;
-                const isAvailable = checkEmpty(target);
-
-                if(isAvailable){
-                    target.classList.add(type, "moving");
-                } else {
-                    gameMovingItem = {...movingItem};
-
-                    if(moveType === "retry"){
-                        clearInterval(gameInterval);
-                        gameover();
-                    }
-                    
-                    setTimeout(() => {
-                        renderBlocks("retry");
-                        isGame = false;
-
-                        if(moveType === "top"){
-                            seizeBlock();
-                        }
-                    }, 0)
-                    return true;
-                }
-            })
-            movingItem.left = left;
-            movingItem.top = top;
-            movingItem.direction = direction
-        }
-
-        function seizeBlock(){
-            const movingBlocks = document.querySelectorAll(".moving");
-            movingBlocks.forEach(moving => {
-                moving.classList.remove("moving");
-                moving.classList.add("seized");
-            })
-            checkMatch();
-        }
-
-        //블록 한줄 제거하기
-        function checkMatch(){
-            const childNodes = tetrisInner.childNodes;
-            childNodes.forEach(child => {
-                let matched = true;
-                child.children[0].childNodes.forEach(li => {
-                    if(!li.classList.contains("seized")){
-                        matched = false;
-                    }
-                })
-                if(matched){
-                    child.remove();
-                    tetrisLine();
-                    gameScore+=100;
-                    tetrisS.innerText = gameScore;
-                    resultS.innerText = gameScore;
-                }
-            })
-            generateNewBlock();
-        }
-
-        //새로운 블록 만들기
-        function generateNewBlock(){
-            if (tetrisS === 5){
-                gameDuration = 300;
-            } else if (tetrisS === 7) {
-                gameDuration = 100;
-            }
-
-            clearInterval(gameInterval);
-            gameInterval = setInterval(() => {
-                moveBlock("top", 1)
-            }, gameDuration);
-
-            const blockArray = Object.entries(blocks);
-            const randomIndex = Math.floor(Math.random() * blockArray.length);
-            movingItem.type = blockArray[randomIndex][0];
-            movingItem.top = 0;
-            movingItem.left = 3;
-            movingItem.direction = 0;
-            gameMovingItem = {...movingItem};
-            renderBlocks();
-        }
-
-        function checkEmpty(target){
-            if(!target || target.classList.contains("seized")){
-                return false;
-            }
-            return true;
-        }
-
-        // 블록 움직이기
-        function moveBlock(moveType, amount){
-            gameMovingItem[moveType] += amount;
-            renderBlocks(moveType);
-        }
-
-        // 게임 종료
-        function gameover(){
-            resultBox.style.opacity = "1";
-            document.addEventListener("keydown", e => {
-                e.preventDefault();
-            }) 
-        }
-
-        //모양 변경하기
-        function changeDirection(){
-            const direction = gameMovingItem.direction;
-            direction === 3 ? gameMovingItem.direction = 0 : gameMovingItem.direction +=1;
-            
-            renderBlocks();
-        }
-        function change_Direction(){
-            const direction = gameMovingItem.direction;
-            direction === 0 ? gameMovingItem.direction = 3 : gameMovingItem.direction -=1;
-            
-            renderBlocks();
-        }
-
-        //스페이스바 누르기
-        function dropBlock(){
-            clearInterval(gameInterval);
-                gameInterval = setInterval(() => {
-                    moveBlock("top", 1)
-                }, 10);
-        }
-
-        //키보드 이벤트
-        document.addEventListener("keydown", e => {
-            // console.log(e);
-            switch(e.keyCode){
-                case 39:
-                    moveBlock("left", 1);
-                break;
-                case 37:
-                    moveBlock("left", -1);
-                break;
-                case 40:
-                    moveBlock("top", 1);
-                break;
-                case 90:
-                    changeDirection();
-                break;
-                case 88:
-                    change_Direction();
-                break;
-                case 32:
-                    dropBlock();
-                break;
-                default:
-                break;
-            }
-            event.preventDefault();
-        })
-
-        //canvas
-        "use strict";
-
-        var tetrominos = [
-        {
-            // box
-            colors: ["rgb(59,84,165)", "rgb(118,137,196)", "rgb(79,111,182)"],
-            data: [
-            [0, 0, 0, 0],
-            [0, 1, 1, 0],
-            [0, 1, 1, 0],
-            [0, 0, 0, 0]
-            ]
-        },
-        {
-            // stick
-            colors: ["rgb(214,30,60)", "rgb(241,108,107)", "rgb(236,42,75)"],
-            data: [
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [1, 1, 1, 1],
-            [0, 0, 0, 0]
-            ]
-        },
-        {
-            // z
-            colors: ["rgb(88,178,71)", "rgb(150,204,110)", "rgb(115,191,68)"],
-            data: [
-            [0, 0, 0, 0],
-            [0, 1, 1, 0],
-            [0, 0, 1, 1],
-            [0, 0, 0, 0]
-            ]
-        },
-        {
-            // T
-            colors: ["rgb(62,170,212)", "rgb(120,205,244)", "rgb(54,192,240)"],
-            data: [
-            [0, 0, 0, 0],
-            [0, 1, 1, 1],
-            [0, 0, 1, 0],
-            [0, 0, 0, 0]
-            ]
-        },
-        {
-            // s
-            colors: ["rgb(236,94,36)", "rgb(234,154,84)", "rgb(228,126,37)"],
-            data: [
-            [0, 0, 0, 0],
-            [0, 1, 1, 0],
-            [1, 1, 0, 0],
-            [0, 0, 0, 0]
-            ]
-        },
-        {
-            // backwards L
-            colors: ["rgb(220,159,39)", "rgb(246,197,100)", "rgb(242,181,42)"],
-            data: [
-            [0, 0, 1, 0],
-            [0, 0, 1, 0],
-            [0, 1, 1, 0],
-            [0, 0, 0, 0]
-            ]
-        },
-        {
-            // L
-            colors: ["rgb(158,35,126)", "rgb(193,111,173)", "rgb(179,63,151)"],
-            data: [
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
-            [0, 1, 1, 0],
-            [0, 0, 0, 0]
-            ]
-        }
-        ];
-
-        var Tetris = function (x, y, width, height) {
-        this.posX = x || 0;
-        this.posY = y || 0;
-
-        this.width = width || window.innerWidth;
-        this.height = height || window.innerHeight;
-
-        this.bgCanvas = document.createElement("canvas");
-        this.fgCanvas = document.createElement("canvas");
-
-        this.bgCanvas.width = this.fgCanvas.width = this.width;
-        this.bgCanvas.height = this.fgCanvas.height = this.height;
-
-        this.bgCtx = this.bgCanvas.getContext("2d");
-        this.fgCtx = this.fgCanvas.getContext("2d");
-
-        this.bgCanvas.style.left = this.posX + "px";
-        this.bgCanvas.style.top = this.posY + "px";
-
-        this.fgCanvas.style.left = this.posX + "px";
-        this.fgCanvas.style.top = this.posY + "px";
-
-        document.body.appendChild(this.bgCanvas);
-        document.body.appendChild(this.fgCanvas);
-        this.init();
-        };
-
-        Tetris.prototype.init = function () {
-        this.curPiece = {
-            data: null,
-            colors: [0, 0, 0],
-            x: 0,
-            y: 0
-        };
-
-        this.lastMove = Date.now();
-        this.curSpeed = 50 + Math.random() * 50;
-        this.unitSize = 20;
-        this.linesCleared = 0;
-        this.level = 0;
-        this.loseBlock = 0;
-
-        // init the board
-        this.board = [];
-        this.boardWidth = Math.floor(this.width / this.unitSize);
-        this.boardHeight = Math.floor(this.height / this.unitSize);
-
-        var board = this.board,
-            boardWidth = this.boardWidth,
-            boardHeight = this.boardHeight,
-            halfHeight = boardHeight / 2,
-            curPiece = this.curPiece,
-            x = 0,
-            y = 0;
-
-        // init board
-        for (x = 0; x <= boardWidth; x++) {
-            board[x] = [];
-            for (y = 0; y <= boardHeight; y++) {
-            board[x][y] = {
-                data: 0,
-                colors: ["rgb(0,0,0)", "rgb(0,0,0)", "rgb(0,0,0)"]
-            };
-
-            if (Math.random() > 0.15 && y > halfHeight) {
-                board[x][y] = {
-                data: 1,
-                colors:
-                    tetrominos[Math.floor(Math.random() * tetrominos.length)].colors
-                };
-            }
-            }
-        }
-
-        // collapse the board a bit
-        for (x = 0; x <= boardWidth; x++) {
-            for (y = boardHeight - 1; y > -1; y--) {
-            if (board[x][y].data === 0 && y > 0) {
-                for (var yy = y; yy > 0; yy--) {
-                if (board[x][yy - 1].data) {
-                    board[x][yy].data = 1;
-                    board[x][yy].colors = board[x][yy - 1].colors;
-
-                    board[x][yy - 1].data = 0;
-                    board[x][yy - 1].colors = [
-                    "rgb(0,0,0)",
-                    "rgb(0,0,0)",
-                    "rgb(0,0,0)"
-                    ];
-                }
-                }
-            }
-            }
-        }
-
-        var self = this;
-
-        window.addEventListener("keydown", function (e) {
-            switch (e.keyCode) {
-            case 37:
-                if (self.checkMovement(curPiece, -1, 0)) {
-                curPiece.x--;
-                }
-                break;
-            case 39:
-                if (self.checkMovement(curPiece, 1, 0)) {
-                curPiece.x++;
-                }
-                break;
-            case 40:
-                if (self.checkMovement(curPiece, 0, 1)) {
-                curPiece.y++;
-                }
-                break;
-            case 32:
-            case 38:
-                curPiece.data = self.rotateTetrimono(curPiece);
-                break;
-            }
-        });
-
-        // render the board
-        this.checkLines();
-        this.renderBoard();
-
-        // assign the first tetri
-        this.newTetromino();
-        this.update();
-        };
-
-        Tetris.prototype.update = function () {
-        var curPiece = this.curPiece;
-
-        if (!this.checkMovement(curPiece, 0, 1)) {
-            if (curPiece.y < -1) {
-            // you lose
-            this.loseScreen();
-            return true;
-            } else {
-            this.fillBoard(curPiece);
-            this.newTetromino();
-            }
-        } else {
-            if (Date.now() > this.lastMove) {
-            this.lastMove = Date.now() + this.curSpeed;
-            if (this.checkMovement(curPiece, 0, 1)) {
-                curPiece.y++;
-            } else {
-                this.fillBoard(curPiece);
-                this.newTetromino();
-            }
-            }
-        }
-
-        this.render();
-
-        var self = this;
-        requestAnimationFrame(function () {
-            self.update();
-        });
-        };
-
-        // render only the board.
-        Tetris.prototype.renderBoard = function () {
-        var canvas = this.bgCanvas,
-            ctx = this.bgCtx,
-            unitSize = this.unitSize,
-            board = this.board,
-            boardWidth = this.boardWidth,
-            boardHeight = this.boardHeight;
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var x = 0; x <= boardWidth; x++) {
-            for (var y = 0; y <= boardHeight; y++) {
-            if (board[x][y].data !== 0) {
-                var bX = x * unitSize,
-                bY = y * unitSize;
-
-                ctx.fillStyle = board[x][y].colors[0];
-                ctx.fillRect(bX, bY, unitSize, unitSize);
-
-                ctx.fillStyle = board[x][y].colors[1];
-                ctx.fillRect(bX + 2, bY + 2, unitSize - 4, unitSize - 4);
-
-                ctx.fillStyle = board[x][y].colors[2];
-                ctx.fillRect(bX + 4, bY + 4, unitSize - 8, unitSize - 8);
-            }
-            }
-        }
-        };
-
-        // Render the current active piece
-        Tetris.prototype.render = function () {
-        var canvas = this.fgCanvas,
-            ctx = this.fgCtx,
-            unitSize = this.unitSize,
-            curPiece = this.curPiece;
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (var x = 0; x < 4; x++) {
-            for (var y = 0; y < 4; y++) {
-            if (curPiece.data[x][y] === 1) {
-                var xPos = (curPiece.x + x) * unitSize,
-                yPos = (curPiece.y + y) * unitSize;
-
-                if (yPos > -1) {
-                ctx.fillStyle = curPiece.colors[0];
-                ctx.fillRect(xPos, yPos, unitSize, unitSize);
-
-                ctx.fillStyle = curPiece.colors[1];
-                ctx.fillRect(xPos + 2, yPos + 2, unitSize - 4, unitSize - 4);
-
-                ctx.fillStyle = curPiece.colors[2];
-                ctx.fillRect(xPos + 4, yPos + 4, unitSize - 8, unitSize - 8);
-                }
-            }
-            }
-        }
-        };
-
-        // Make sure we can mov where we want.
-        Tetris.prototype.checkMovement = function (curPiece, newX, newY) {
-        var piece = curPiece.data,
-            posX = curPiece.x,
-            posY = curPiece.y,
-            board = this.board,
-            boardWidth = this.boardWidth,
-            boardHeight = this.boardHeight;
-
-        for (var x = 0; x < 4; x++) {
-            for (var y = 0; y < 4; y++) {
-            if (piece[x][y] === 1) {
-                if (!board[posX + x + newX]) {
-                board[posX + x + newX] = [];
-                }
-
-                if (!board[posX + x + newX][y + posY + newY]) {
-                board[posX + x + newX][y + posY + newY] = {
-                    data: 0
-                };
-                }
-
-                if (
-                posX + x + newX >= boardWidth ||
-                posX + x + newX < 0 ||
-                board[posX + x + newX][y + posY + newY].data == 1
-                ) {
-                return false;
-                }
-
-                if (posY + y + newY > boardHeight) {
-                return false;
-                }
-            }
-            }
-        }
-        return true;
-        };
-
-        // checks for completed lines and clears them
-        Tetris.prototype.checkLines = function () {
-        var board = this.board,
-            boardWidth = this.boardWidth,
-            boardHeight = this.boardHeight,
-            linesCleared = this.linesCleared,
-            level = this.level,
-            y = boardHeight + 1;
-
-        while (y--) {
-            var x = boardWidth,
-            lines = 0;
-
-            while (x--) {
-            if (board[x][y].data === 1) {
-                lines++;
-            }
-            }
-
-            if (lines === boardWidth) {
-            linesCleared++;
-            level = Math.round(linesCleared / 20) * 20;
-
-            var lineY = y;
-            while (lineY) {
-                for (x = 0; x <= boardWidth; x++) {
-                if (lineY - 1 > 0) {
-                    board[x][lineY].data = board[x][lineY - 1].data;
-                    board[x][lineY].colors = board[x][lineY - 1].colors;
-                }
-                }
-                lineY--;
-            }
-            y++;
-            }
-        }
-        };
-
-        // Lose animation
-        Tetris.prototype.loseScreen = function () {
-        var ctx = this.bgCtx,
-            unitSize = this.unitSize,
-            boardWidth = this.boardWidth,
-            boardHeight = this.boardHeight,
-            y = boardHeight - this.loseBlock;
-
-        for (var x = 0; x < boardWidth; x++) {
-            var bX = x * unitSize,
-            bY = y * unitSize;
-
-            ctx.fillStyle = "rgb(80,80,80)";
-            ctx.fillRect(bX, bY, unitSize, unitSize);
-
-            ctx.fillStyle = "rgb(150,150,150)";
-            ctx.fillRect(bX + 2, bY + 2, unitSize - 4, unitSize - 4);
-
-            ctx.fillStyle = "rgb(100,100,100)";
-            ctx.fillRect(bX + 4, bY + 4, unitSize - 8, unitSize - 8);
-        }
-
-        if (this.loseBlock <= boardHeight + 1) {
-            this.loseBlock++;
-
-            var self = this;
-            requestAnimationFrame(function () {
-            self.loseScreen();
+        pageon();
+        setTimeout(() => {
+          document.getElementById("vue").classList.add("btnon");
+        }, 1600);
+        function Pagechange() {
+          document.querySelectorAll(".link").forEach((el) => {
+            el.addEventListener("click", (e) => {
+              e.preventDefault();
+              const Href = el.getAttribute("href");
+              document.getElementById("vue").classList.add("close");
+              Box.forEach((e, i) => {
+                setTimeout(() => {
+                  e.classList.add("active");
+                }, 50 * i);
+              });
+              setTimeout(() => {
+                window.location.href = Href;
+              }, 2000);
             });
-        } else {
-            this.init();
+          });
         }
-        };
-
-        // adds the piece as part of the board
-        Tetris.prototype.fillBoard = function (curPiece) {
-        var piece = curPiece.data,
-            posX = curPiece.x,
-            posY = curPiece.y,
-            board = this.board;
-
-        for (var x = 0; x < 4; x++) {
-            for (var y = 0; y < 4; y++) {
-            if (piece[x][y] === 1) {
-                board[x + posX][y + posY].data = 1;
-                board[x + posX][y + posY].colors = curPiece.colors;
-            }
-            }
-        }
-
-        this.checkLines();
-        this.renderBoard();
-        };
-
-        // rotate a piece
-        Tetris.prototype.rotateTetrimono = function (curPiece) {
-        var rotated = [];
-
-        for (var x = 0; x < 4; x++) {
-            rotated[x] = [];
-            for (var y = 0; y < 4; y++) {
-            rotated[x][y] = curPiece.data[3 - y][x];
-            }
-        }
-
-        if (
-            !this.checkMovement(
-            {
-                data: rotated,
-                x: curPiece.x,
-                y: curPiece.y
-            },
-            0,
-            0
-            )
-        ) {
-            rotated = curPiece.data;
-        }
-
-        return rotated;
-        };
-
-        // assign the player a new peice
-        Tetris.prototype.newTetromino = function () {
-        var pieceNum = Math.floor(Math.random() * tetrominos.length),
-            curPiece = this.curPiece;
-
-        curPiece.data = tetrominos[pieceNum].data;
-        curPiece.colors = tetrominos[pieceNum].colors;
-        curPiece.x = Math.floor(
-            Math.random() * (this.boardWidth - curPiece.data.length + 1)
-        );
-        curPiece.y = -4;
-        };
-
-        var width = window.innerWidth,
-        boardDiv = 20 * Math.round(window.innerWidth / 20),
-        boards = 8,
-        bWidth = boardDiv / boards,
-        tetrisInstances = [];
-
-        for (var w = 0; w < boards; w++) {
-        tetrisInstances.push(
-            new Tetris(20 * Math.round((w * bWidth) / 20), 0, bWidth)
-        );
-        }
-        
+        Pagechange();
+      };
     </script>
-</body>
+  </body>
 </html>
