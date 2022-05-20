@@ -465,11 +465,11 @@ text.title {
     transition: all 1s;
   }
   .img01 .img {
-    background: url(../img/face.png) center / contain no-repeat;
+    background: url(../img/face.webp) center / contain no-repeat;
     filter: grayscale(0.3);
   }
   .img02 .img {
-    background: url(../img/section02.png) center / contain;
+    background: url(../img/section02.webp) center / contain;
   }
 
 
@@ -565,19 +565,19 @@ text.title {
     transition: all 1s;
   }
   .site_img01 {
-    background: url(../img/site01.png) center / cover;
+    background: url(../img/site01.webp) center / cover;
   }
   .site_img02 {
-    background: url(../img/site02.png) center / cover;
+    background: url(../img/site02.webp) center / cover;
   }
   .site_img03 {
-    background: url(../img/site03.png) center / cover;
+    background: url(../img/site03.webp) center / cover;
   }
   .site_img04 {
-    background: url(../img/site04.png) center / cover;
+    background: url(../img/site04.webp) center / cover;
   }
   .site_img05 {
-    background: url(../img/site05.png) center / cover;
+    background: url(../img/site05.webp) center / cover;
   }
   .site_introduce {
     padding: 0 27.60415vw 0 4.94792vw;
@@ -616,8 +616,8 @@ text.title {
   }
   .script_img {
     position: relative;
-    width: 32.813vw;
-    height: 90vh;
+    width: 600px;
+    height: 860px;
     margin-left: 40px;
     margin-right: 275px;
   }
@@ -647,29 +647,29 @@ text.title {
     box-shadow: inset 5em 1em gold;
   }
   .script_img01 {
-    background: url(../img/script01.png) center / cover;
+    background: url(../img/script01.webp) center / cover;
   }
   .script_img02 {
-    background: url(../img/script02.png) center / cover;
+    background: url(../img/script02.webp) center / cover;
   }
   .script_img03 {
-    background: url(../img/script03.png) center / cover;
+    background: url(../img/script03.webp) center / cover;
   }
   .script_img04 {
-    background: url(../img/script04.png) center / cover;
+    background: url(../img/script04.webp) center / cover;
   }
   .script_img05 {
-    background: url(../img/script05.png) center / cover;
+    background: url(../img/script05.webp) center / cover;
   }
   .script_img06 {
-    background: url(../img/script06.png) center / cover;
+    background: url(../img/script06.webp) center / cover;
   }
   .script_img07 {
-    background: url(../img/script07.png) center / cover;
+    background: url(../img/script07.webp) center / cover;
   }
   .script_img08 {
-    background: url(../img/script08.png) center / cover;
+    background: url(../img/script08.webp) center / cover;
   }
   .script_img09 {
-    background: url(../img/script09.png) center / cover;
+    background: url(../img/script09.webp) center / cover;
   }
