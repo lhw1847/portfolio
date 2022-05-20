@@ -1,12 +1,12 @@
-window.onload = function () {
-  setTimeout(() => {
-    document.querySelector(".hi").style.opacity = 1;
-    document.querySelector(".logo--top").style.opacity = 1;
-    document.querySelector(".menu-btn").style.opacity = 1;
-    document.querySelector(".filter").style.opacity = 1;
-    document.querySelector(".scroll-content--last").style.opacity = 1;
-  }, 500);
-}
+// window.onload = function () {
+//   setTimeout(() => {
+//     document.querySelector(".hi").style.opacity = 1;
+//     document.querySelector(".logo--top").style.opacity = 1;
+//     document.querySelector(".menu-btn").style.opacity = 1;
+//     document.querySelector(".filter").style.opacity = 1;
+//     document.querySelector(".scroll-content--last").style.opacity = 1;
+//   }, 500);
+// }
 const math = {
   lerp: (a, b, n) => {
     return (1 - n) * a + n * b;
