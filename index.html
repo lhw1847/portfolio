@@ -16,38 +16,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
-    // window.console = window.console || function (t) {};
+    window.console = window.console || function (t) {};
   </script>
   <script>
-    // if (document.location.search.match(/type=embed/gi)) {
-    //   window.parent.postMessage("resize", "*");
-    // }
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
   </script>
 </head>
 
 <body translate="no">
   <span class="logo logo--top js-trigger">PORTFOLIO</span>
 
-  <!-- <a href="https://codepen.io/ReGGae/full/QZxdVX/" target="_blank" class="resize">
+  <div class="resize">
     <div class="resize__inner">
-      <figure class="logo logo--resize">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/logo.svg">
-      </figure>
       <p>Please view in <span>full page</span> mode</p>
     </div>
-  </a> -->
+  </div>
 
   <a href="https://github.com/lhw1847" target="_blank" class="hi">
     Hi
-  </a>
-
-  <a href="https://dribbble.com/shots/5321013-Habital-Showcase-Alternative" target="_blank" rel="nofollow"
-    class="menu-btn js-menu-btn">
-    <div class="menu-btn__circles">
-      <span class="menu-btn__circle menu-btn__circle--top js-menu-btn__circle--top"></span>
-      <span class="menu-btn__circle menu-btn__circle--bottom js-menu-btn__circle--bottom"></span>
-    </div>
-    <div class="menu-btn__text">See shot</div>
   </a>
 
   <div class="scroll" data-scroll>
@@ -79,9 +67,9 @@
           </a>
         </li>
         <li class="filter__item">
-          <a href="contect.html" class="filter__link js-triggermenu">
-            <div class="filter__link-mask" area-hidden=""><span>Contect</span></div>
-            Contect
+          <a href="contact.html" class="filter__link js-triggermenu">
+            <div class="filter__link-mask" area-hidden=""><span>Contact</span></div>
+            Contact
           </a>
         </li>
       </ul>
@@ -172,6 +160,9 @@ SLICK슬라이드와 LIGHT BOX 플러그인을 이용하여 동적인
     <div class="mask__slice js-mask__slice"></div>
     <div class="mask__slice js-mask__slice"></div>
     <div class="mask__slice js-mask__slice"></div>
+    <div class="mask__slice js-mask__slice"></div>
+    <div class="mask__slice js-mask__slice"></div>
+    <div class="mask__slice js-mask__slice"></div>
     <div class="mask__inner">
       <figure class="logo logo--mask">
         <img class="js-logo" src="assets/img/loading.png">
@@ -182,10 +173,8 @@ SLICK슬라이드와 LIGHT BOX 플러그인을 이용하여 동적인
     </div>
   </div>
 
-  <!-- <script
-    src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js">
-  </script> -->
 
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
   <script src='assets/js/TweenMax.min.js'></script>
   <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
   <script id="rendered-js" src="assets/js/script.js"></script>

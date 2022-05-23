@@ -104,17 +104,6 @@ class Smooth {
         this.dom.content[1].style.width = `${w}px`;
         document.body.style.height = `${w}px`;
       }
-      // document.querySelectorAll(".filter__link").forEach(el => {
-      //   el.addEventListener("click", () => {
-      //     this.data.current = 0;
-      //     const diff = this.data.current - this.data.last.one;
-      //     const acc = 0;
-      //     const velo = 0;
-      //     const bounce = 0;
-      //     const skew = 0;
-      //     document.scrollingElement.scrollTop = 0;
-      //   })
-      // })
     });
   }
 
@@ -468,48 +457,3 @@ class Transition {
 // Init classes
 const smooth = new Smooth();
 const transition = new Transition();
-
-// See shot - hover
-const btn = document.querySelector('.js-menu-btn');
-
-btn.addEventListener('mouseenter', () => {
-  TweenMax.to('.js-menu-btn__circle--bottom', 0.5, {
-    y: 15,
-    alpha: 0,
-    ease: Expo.easeOut
-  });
-
-
-  TweenMax.set('.js-menu-btn__circle--top', {
-    autoAlpha: 1
-  });
-
-  TweenMax.fromTo('.js-menu-btn__circle--top', 0.75, {
-    y: -60
-  }, {
-    y: 0,
-    ease: Bounce.easeOut
-  });
-
-});
-
-btn.addEventListener('mouseleave', () => {
-  TweenMax.to('.js-menu-btn__circle--top', 0.5, {
-    y: 15,
-    alpha: 0,
-    ease: Expo.easeOut
-  });
-
-
-  TweenMax.set('.js-menu-btn__circle--bottom', {
-    autoAlpha: 1
-  });
-
-  TweenMax.fromTo('.js-menu-btn__circle--bottom', 0.75, {
-    y: -60
-  }, {
-    y: 0,
-    ease: Bounce.easeOut
-  });
-
-});

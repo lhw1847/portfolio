@@ -38,6 +38,9 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
 /* fallback */
 @font-face {
     font-family: 'Material Symbols Outlined';
