@@ -18,7 +18,9 @@
         * {margin: 0; padding: 0;}
         a {color: #fff; text-decoration: none;}
         body {background-color: #222; color: #fff; font-family: "NexonLv1Gothic"; font-weight: 300;}
-
+        ::-webkit-scrollbar {
+            display: none;
+        }
         /* parallax__title */
         #parallax__title {padding: 20px;}
         #parallax__title h1 {font-size: 30px; border-bottom: 1px dashed #fff; margin-bottom: 10px; padding-bottom: 5px; font-weight: 400; display: inline-block;}
@@ -30,8 +32,8 @@
         /* //parllax__title */
 
         /* parallax__nav */
-        #parallax__nav {position: fixed; right: 20px; top: 20px; z-index: 1000; background-color: rgba(0,0,0,0.4); padding: 15px 20px; border-radius: 50px;}
-        #parallax__nav li {list-style: none; display: inline;}
+        #parallax__nav {position: fixed; right: 20px; top: 50%; z-index: 1000; background-color: rgba(0,0,0,0.4); padding: 15px 20px; border-radius: 50px;}
+        #parallax__nav li {list-style: none; display: block;}
         #parallax__nav li a {display: inline-block; width: 30px; height: 30px; padding: 5px; text-align: center; line-height: 30px;}
         #parallax__nav li.active a {background: #fff; color: #000; border-radius: 50%;}
         /* //parallax__nav */
@@ -83,6 +85,8 @@
             <li><a href="parallaxEffect07.html">7</a></li>
             <li><a href="parallaxEffect08.html">8</a></li>
             <li><a href="parallaxEffect09.html">9</a></li>
+            <li><a href="parallaxEffectGSAP01.html">A</a></li>
+            <li><a href="parallaxEffectGSAP02.html">B</a></li>
         </ul>
     </header>
     <!-- //parallax__title -->

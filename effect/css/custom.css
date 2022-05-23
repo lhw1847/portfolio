@@ -71,11 +71,12 @@ body::before {
 }
 .number {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 5%;
+    top: 50%;
+    z-index: 9999;
 }
 .number li {
-    display: inline;
+    display: block;
 }
 .number li a {
     display: inline-block;

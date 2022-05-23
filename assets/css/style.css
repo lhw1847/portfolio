@@ -675,7 +675,7 @@ text.title {
     background: url(../img/script04.webp) center / cover;
   }
   .script_img05 {
-    background: url(../img/script05.webp) center / cover;
+    background: url(../img/script05.webp) center/ cover;
   }
   .script_img06 {
     background: url(../img/script06.webp) center / cover;
@@ -690,7 +690,7 @@ text.title {
     background: url(../img/script09.webp) center / cover;
   }
 
-  .contact {
+  .contect {
     width: 600px;
   }
   .textbox {
@@ -717,21 +717,21 @@ text.title {
   .textbox textarea {
     resize: none;
   }
-  .contact {
+  .contect {
     margin-top: 70px;
     display: flex;
     flex-direction: column;
   }
-  .contact_btn {
+  .contect_btn {
     text-align: right;
   }
-  .contact .contact_btn button {
+  .contect .contect_btn button {
     font-family: "Chosunilbo_myungjo";
     font-size: 1.492895em;
     position: relative;
     margin-right: 72px;
   }
-  .contact .contact_btn button::before {
+  .contect .contect_btn button::before {
     position: absolute;
     content: "";
     right: -72px;
@@ -741,7 +741,7 @@ text.title {
     background: #ef004a;
     border-radius: 50%;
   }
-  .contact .contact_btn button::after {
+  .contect .contect_btn button::after {
     position: absolute;
     content: "";
     right: -54px;
@@ -750,19 +750,19 @@ text.title {
     height: 14px;
     background: url(../img/arrow2.svg);
   }
-  .contact ul {
+  .contect ul {
     padding: 130px 0 0 0;
     display: flex;
     justify-content: end;
   }
-  .contact ul li, .cate {
+  .contect ul li, .cate {
     display: inline-block;
     padding: 10px 20px;
     background: #460a16;
     border-radius: 50px;
     margin-left: 10px;
   }
-  .contact ul li button {
+  .contect ul li button {
     font-size: 12px;
     background: #460a16;
   }

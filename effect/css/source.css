@@ -82,6 +82,9 @@ html, body {
   background-color: #000000;
   transform: rotate(90deg);
 }
+.menu-bar {
+  background: #BABABA;
+}
 .menu-bar > span {
   padding: 8px;
   display: inline-block;
@@ -119,10 +122,12 @@ html, body {
 .content-container > .content > .scroll {
   width: 26px;
 }
-
+.language-css {
+  background: #0000ff;
+}
 .scroll {
   background-color: #D7D7D7;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
@@ -189,7 +194,7 @@ html, body {
 .source {
     position: absolute;
     right: 20px;
-    bottom: 100px;
+    top: 100px;
 }
 .source button {
     font-family: 'DungGeunMo';
@@ -200,7 +205,7 @@ html, body {
     background: transparent;
     transition: all 0.2s;
     cursor: pointer;
-    background: #cacaca;
+    background: #fff;
     border: 3px ridge #cacaca;
 }
 .source button:hover {
@@ -236,7 +241,7 @@ html, body {
     flex-direction: column;
     height: 100vh;
     transform: scale(0);
-}
+    resize: both}
 #modal.show .modal-wrap {
     animation: zoomOut 0.5s 1s ease forwards;
 }
@@ -273,12 +278,16 @@ html, body {
     overflow: scroll;
     overflow-x: hidden;
     background: #c7c7c7;
+    resize: both;
+    scrollbar-width: 10px;
+    background: #0000ff;
 }
 
 .view-cont {
     background-color: #fff;
     height: 100%;
     padding-top: 65px;
+    background: #0000ff;
 }
 .view-cont > div {
     display: none;
@@ -288,5 +297,5 @@ html, body {
 }
 .view-cont pre code.hljs {
     line-height: 1.6;
-    width: 80%;
+    width: 100%;
 }

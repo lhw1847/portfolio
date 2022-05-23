@@ -53,10 +53,12 @@
                 linear-gradient(#cdcccc, #cdcccc);
             background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
         }
+        ::-webkit-scrollbar {
+            display: none;
+        }
         #header {
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 0; top: 0;
             width: 100%;
             background: #262626;
             color: #fff;
@@ -68,10 +70,9 @@
         }
         #header::before {
             content: '';
-            border: 4px ridge #A3A3A3;
+            border: 4px ridge #a3a3a3;
             position: absolute;
-            left: 5px;
-            top: 5px;
+            left: 5px; top: 5px;
             width: calc(100% - 10px);
             height: calc(100% - 10px);
             z-index: -1;
@@ -85,8 +86,11 @@
         #header h1 a:hover {
             color: #A3A3A3;
         }
+        #header h1 a:hover {
+            color: #A3A3A3;
+        }
         #header nav {
-            padding-left: 10px;
+            padding-right: 10px;
         }
         #header nav li {
             list-style: none;
@@ -100,8 +104,8 @@
             border: 1px dashed #fff;
         }
         #header nav li.active a {
-            color: #262626;
             background: #fff;
+            color: #262626;
         }
         #header nav li a:hover {
             opacity: 0.5;
@@ -320,9 +324,6 @@
                 <li><a href="quizEffect03.html">3</a></li>
                 <li class="active"><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
-                <li><a href="quizEffect08.html">8</a></li>
             </ul>
         </nav>
     </header>
