@@ -1,8 +1,11 @@
-// window.onload = function(){
-//   setTimeout(() => {
-//     alert("sd")
-//   }, createTimeline());
-// }
+window.onload = function(){
+    setTimeout(() => {
+      document.body.style.backgroundColor = "#111";
+    }, 1000);
+}
+document.querySelector(".resize").addEventListener("wheel", e => {
+  e.preventDefault
+})
 
 const math = {
   lerp: (a, b, n) => {
@@ -15,7 +18,7 @@ const math = {
 
 
 const config = {
-  height: window.innerHeight,
+  height: window.offsetY,
   width: window.innerWidth
 };
 

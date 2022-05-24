@@ -19,7 +19,7 @@
     body {
       height: 100vh;
       background-size: 20px 20px;
-      background: url(./tetris_01.jpg) top / cover repeat-y;
+      background: url(./tetris_01.jpg) center / cover;
       overflow: hidden;
     }
 
@@ -41,10 +41,11 @@
 
     .tetris__wrap {
       width: 50%;
-      height: 550px;
+      height: 95%;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
+      justify-content: space-evenly;
       background: #fff;
     }
 
@@ -123,7 +124,7 @@
     }
 
     .result__box {
-      width: 500px;
+      width: 300px;
       background: #fff;
       border-radius: 5px;
       font-size: 1.3em;
@@ -139,7 +140,6 @@
 
     .result__box .score {
       padding: 2rem;
-      height: 300px;
     }
 
     .result__box .buttons {
@@ -166,8 +166,7 @@
     }
 
     .tetris__inner {
-      width: 306px;
-      margin: auto;
+      width: 98%;
     }
 
     .tetris__inner>ul {
@@ -177,7 +176,7 @@
 
     .tetris__inner>ul>li {
       width: 100%;
-      height: 25px;
+      height: 18px;
     }
 
     .tetris__inner>ul>li>ul {
@@ -185,8 +184,8 @@
     }
 
     .tetris__inner>ul>li>ul>li {
-      width: 25px;
-      height: 25px;
+      width: 18px;
+      height: 18px;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
       0 6px 10px 0 rgba(0,0,0,0.17);
       box-sizing: border-box;
@@ -309,7 +308,7 @@
     const cardSong = document.querySelector("#song");
     const cardSound = document.querySelector(".card__sound button");
 
-    const game_rows = 20;
+    const game_rows = 15;
     const game_cols = 12;
 
     let gameScore = 0;

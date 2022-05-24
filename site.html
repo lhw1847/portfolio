@@ -17,7 +17,7 @@
 
 <title>Portfolio</title>
 <link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="min.css">
+<link rel="stylesheet" href="assets/css/min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 
 
@@ -37,13 +37,13 @@
 </head>
 
 <body translate="no" >
-  <h1 class="logo logo--top js-trigger">PORTFOLIO</h1>
+<h1 class="logo logo--top js-trigger">PORTFOLIO</h1>
 
-<a href="https://codepen.io/ReGGae/full/QZxdVX/" target="_blank" class="resize">
+<div class="resize">
   <div class="resize__inner">
     <p>Please view in <span>full page</span> mode</p>
   </div>
-</a>
+</div>
 
 <a href="https://twitter.com/Jesper_Landberg?lang=en" target="_blank" class="hi">work</a>
 
@@ -129,6 +129,16 @@
         </div>
       </div>
     </article>
+
+    <article class="slide slide--3 js-slide">
+      <div class="slide__inner">
+        <div class="slide__img">
+          <figure>
+            <img src="assets/img/site06.webp" draggable="false">
+          </figure>
+        </div>
+      </div>
+    </article>
     
   </div>  
   
@@ -138,10 +148,8 @@
       <div class="slide__inner">
         <div class="slide__sub-title"><span>SITE01</span></div>
         <h2 class="slide__title"><div class="js-transition-title">Web Standard</div></h2>
-        <div class="slide__img slide__img--proxy">
-          <div onMouseWheel=imgWheel(event) class="img" style="background-image: url(assets/img/standard.webp);"></div>
-        </div>
-        <a href="javascript:void(0);"><div class="slide__project">웹 표준 사이트 VIEW</div></a>
+        <div class="slide__img slide__img--proxy"></div>
+        <a target="" href="javascript:void(0);" class="slide__project">웹 표준 사이트</a>
       </div>
     </article>
     
@@ -149,10 +157,8 @@
       <div class="slide__inner">
         <div class="slide__sub-title"><span>SITE02</span></div>
         <h2 class="slide__title"><div class="js-transition-title">Responsive</div></h2>
-        <div class="slide__img slide__img--proxy">
-          <div onMouseWheel=imgWheel(event) class="img" style="background-image: url(assets/img/responsive.webp);"></div>
-        </div>
-        <a href="javascript:void(0);"><div class="slide__project">반응형 사이트 VIEW</div></a>
+        <div class="slide__img slide__img--proxy"></div>
+        <a target="" href="javascript:void(0);" class="slide__project">반응형 사이트</a>
       </div>
     </article>
     
@@ -160,10 +166,8 @@
       <div class="slide__inner">
         <div class="slide__sub-title"><span>SITE03</span></div>
         <h2 class="slide__title"><div class="js-transition-title">PHP</div></h2>
-        <div class="slide__img slide__img--proxy">
-          <div onMouseWheel=imgWheel(event) class="img" style="background-image: url(assets/img/php.webp);"></div>
-        </div>
-        <a href="javascript:void(0);"><div class="slide__project">PHP 사이트 VIEW</div></a>
+        <div class="slide__img slide__img--proxy"></div>
+        <a target="" href="javascript:void(0);" class="slide__project">PHP 사이트</a>
       </div>
     </article>
 
@@ -171,21 +175,26 @@
       <div class="slide__inner">
         <div class="slide__sub-title"><span>SITE04</span></div>
         <h2 class="slide__title"><div class="js-transition-title">REACT</div></h2>
-        <div class="slide__img slide__img--proxy">
-          <div onMouseWheel=imgWheel(event) class="img" style="background-image: url(assets/img/standard.webp);"></div>
-        </div>
-        <a href="javascript:void(0);"><div class="slide__project">REACT 사이트 VIEW</div></a>
+        <div class="slide__img slide__img--proxy"></div>
+        <a target="" href="javascript:void(0);" class="slide__project">REACT 사이트</a>
+      </div>
+    </article>
+
+    <article class="slide slide--2 js-slide">
+      <div class="slide__inner">
+        <div class="slide__sub-title"><span>SITE04</span></div>
+        <h2 class="slide__title"><div class="js-transition-title">REACT BLOG</div></h2>
+        <div class="slide__img slide__img--proxy"></div>
+        <a target="" href="javascript:void(0);" class="slide__project">REACT 블로그</a>
       </div>
     </article>
     
-    <article class="slide slide--2 js-slide">
+    <article class="slide slide--3 js-slide">
       <div class="slide__inner">
         <div class="slide__sub-title"><span>STITE05</span></div>
         <h2 class="slide__title"><div class="js-transition-title">VUE</div></h2>
-        <div class="slide__img slide__img--proxy">
-          <div onMouseWheel=imgWheel(event) class="img" style="background-image: url(assets/img/standard.webp);"></div>
-        </div>
-        <a href="javascript:void(0);"><div class="slide__project">VUE 사이트 VIEW</div></a>
+        <div class="slide__img slide__img--proxy"></div>
+        <a target="" href="javascript:void(0);" class="slide__project">VUE 사이트</a>
       </div>
     </article>
     
@@ -216,53 +225,6 @@
 <script src='assets/js/TweenMax.min.js'></script>
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
 <script id="rendered-js" src="assets/js/script.js"></script>
-<script>
-  const imgWrap = document.querySelectorAll(".slide__img--proxy");
-  const imgSlide = document.querySelectorAll(".slide__img--proxy .img");
-
-  imgWrap.forEach(el => {
-    el.addEventListener("mouseenter", (el) => {
-      el.target.querySelector(".img").style.transform = "translateX(0)";
-      el.preventDefault();
-    })
-  })
-  imgWrap.forEach(el => {
-    el.addEventListener("mouseleave", (el) => {
-      el.target.querySelector(".img").style.transform = "translateX(100%)";
-      deltaD = 0;
-      deltaU = 0;
-      setTimeout(() => {
-        el.target.querySelector(".img").style.backgroundPositionY = 0, 0;
-      }, 500);
-      el.preventDefault();
-    })
-  })
-
-    let deltaD = 0, deltaU = 0;
-    if(deltaU <= 0){
-      deltaU = 0;
-    }
-  function imgWheel(event){
-    console.log(deltaD, deltaU)
-    // console.log(event)
-    if(deltaD == -deltaU){
-      deltaD = 0;
-      deltaU = 0;
-    }
-      if(event.deltaY >= 0){
-        deltaD += 100;
-        deltaU = 0;
-        event.target.style.backgroundPositionY = -deltaD / 2 + "px", 0;
-      } else {
-        deltaU -= 100;
-        event.target.style.backgroundPositionY = (-deltaD-deltaU) / 2 + "px", 0;
-      }
-      event.preventDefault();
-      return;
-  }
-</script>
-  
-
 </body>
 
 </html>
