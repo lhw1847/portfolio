@@ -229,14 +229,15 @@
   imgWrap.forEach(el => {
     el.addEventListener("mouseleave", (el) => {
       el.target.querySelector(".img").style.transform = "translateX(100%)";
+      deltaD = 0;
+      deltaU = 0;
+      setTimeout(() => {
+        el.target.querySelector(".img").style.backgroundPositionY = 0, 0;
+      }, 500);
       el.preventDefault();
     })
   })
 
-  // imgSlide.forEach(el => {
-  //   el.addEventListener("wheel", (event) => {
-  //   })
-  // })
     let deltaD = 0, deltaU = 0;
     if(deltaU <= 0){
       deltaU = 0;
