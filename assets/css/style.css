@@ -1,25 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  user-select: none;
+@charset "utf-8";
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   height: 100%;
   overflow-y: scroll;
-  padding: 0;
-  margin: 0;
   background-color: #fff;
+  color: #fff;
   font-family: 'Abel';
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
 }
 
 iframe {
@@ -41,7 +35,7 @@ iframe.show {
 }
 
 .slide__sub-title.move {
-  transform: translateX(50%);
+  transform: translateX(80%);
 }
 
 .scroll-content {
@@ -59,7 +53,7 @@ iframe.show {
 
 .logo {
   font-size: 20px;
-  color: #fff
+  color: #fff;
 }
 
 .logo--top {
@@ -69,6 +63,7 @@ iframe.show {
   z-index: 10;
   text-transform: uppercase;
   font-size: 20px;
+  pointer-events: none;
 }
 
 .logo--resize {
@@ -160,8 +155,9 @@ iframe.show {
   padding: 20vh 0;
 }
 
-.slide--0 {
+.slide:last-child.slide--0 {
   width: 100vw;
+  padding: 12em 0;
 }
 
 .slide--1 {
@@ -187,12 +183,19 @@ iframe.show {
   width: 100%;
 }
 
+.js-transition-img__inner.contact {
+  padding-left: 55%;
+  width: 80%;
+  color: #fff;
+}
+
 .slide__sub-title {
   position: absolute;
   top: 5%;
   left: 5vw;
   color: rgba(255, 255, 255, 0.5);
   font-size: 1vw;
+  transition: transform 0.5s;
 }
 
 .slide__title {
@@ -205,6 +208,7 @@ iframe.show {
   overflow: hidden;
   font-weight: 600;
   text-transform: uppercase;
+  transition: transform 0.5s;
 }
 
 .slide__project {
@@ -345,4 +349,92 @@ img {
   .resize {
     display: block;
   }
+}
+.img {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 600px;
+  height: 100%;
+  transition: all 1s;
+}
+.img01 .img {
+  background: url(../img/face.webp) center / contain no-repeat;
+  filter: grayscale(0.3);
+}
+.textbox {
+  border-bottom: 1px solid #ddd;
+  padding: 60px 0 15px 0;
+  display: flex;
+}
+
+.textbox:first-child {
+  padding: 0 0 15px 0;
+}
+
+.textbox label {
+  font-size: 1.24408em;
+  flex: 1 1 7%;
+}
+
+.textbox input,
+.textbox textarea {
+  flex: 1 1 80%;
+  background: #111;
+  border: 0;
+  color: #fff;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.textbox textarea {
+  resize: none;
+}
+
+.contact {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_btn {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  align-items: center;
+}
+
+.contact .contact_btn button {
+  font-family: "Chosunilbo_myungjo";
+  font-size: 1.492895em;
+  position: relative;
+  margin-right: 72px;
+  background: #111;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.contact .contact_btn button::before {
+  position: absolute;
+  content: "";
+  right: -72px;
+  bottom: -10px;
+  width: 50px;
+  height: 50px;
+  background: #ef004a;
+  border-radius: 50%;
+}
+
+.contact .contact_btn button::after {
+  position: absolute;
+  content: "";
+  right: -54px;
+  bottom: 3px;
+  width: 13px;
+  height: 14px;
+  background: url(../img/arrow2.svg);
 }

@@ -253,7 +253,6 @@ class Transition {
       el.addEventListener("click", (e) => {
         e.preventDefault();
         const Href = el.getAttribute("href");
-        // document.querySelector(".scroll-content--last").style.display = "none";
         this.ed = new TimelineMax();
         this.ed.
         set(this.dom.mask, {
@@ -274,7 +273,7 @@ class Transition {
         addLabel('loaderEnd');
         setTimeout(() => {
           window.location.href = Href;
-        }, 2000);
+        }, 1700);
       });
     });
   }
