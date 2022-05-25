@@ -1,7 +1,7 @@
 window.onload = function(){
     setTimeout(() => {
       document.body.style.backgroundColor = "#111";
-    }, 1000);
+    }, 500);
 }
 document.querySelector(".resize").addEventListener("wheel", e => {
   e.preventDefault
