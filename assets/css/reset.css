@@ -36,10 +36,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #390;
-}
-
 /* 폰트 초기화 */
 body,
 input,

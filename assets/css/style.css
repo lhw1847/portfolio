@@ -4,6 +4,7 @@
   box-sizing: border-box;
   user-select: none;
 }
+
 body {
   height: 100%;
   overflow-y: scroll;
@@ -16,9 +17,7 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-a {
-  text-decoration: none;
-}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -51,15 +50,18 @@ iframe.show {
   position: relative;
   height: 100vh;
 }
+
 .scroll-content--last {
   position: absolute;
   top: 0;
   left: 0;
 }
+
 .logo {
   font-size: 20px;
   color: #fff
 }
+
 .logo--top {
   position: fixed;
   top: 1vw;
@@ -68,13 +70,16 @@ iframe.show {
   text-transform: uppercase;
   font-size: 20px;
 }
+
 .logo--resize {
   margin-bottom: 1rem;
 }
+
 .logo--mask {
   overflow: hidden;
   margin-bottom: 0.1vw;
 }
+
 .logo--mask>div {
   width: 30vw;
   height: auto;
@@ -83,24 +88,29 @@ iframe.show {
   opacity: 0;
   color: #000;
 }
+
 .js-logo {
   letter-spacing: 1vw;
   line-height: 1;
   font-size: 4.82vw;
   text-transform: uppercase;
 }
+
 .filter {
   position: absolute;
   top: 0vw;
   right: 0;
   z-index: 10;
 }
+
 .filter__list {
   display: flex;
 }
+
 .filter__item {
   display: block;
 }
+
 .filter__link {
   position: relative;
   display: block;
@@ -111,6 +121,7 @@ iframe.show {
   text-transform: uppercase;
   overflow: hidden;
 }
+
 .filter__link-mask {
   position: absolute;
   top: 0;
@@ -122,6 +133,7 @@ iframe.show {
   transition: transform 0.75s ease;
   z-index: 2;
 }
+
 .filter__link-mask span {
   display: block;
   padding: 15px;
@@ -130,41 +142,51 @@ iframe.show {
   transition: transform 0.75s ease;
   color: #fff;
 }
+
 .filter__link:hover .filter__link-mask span,
 .filter__link.is-active .filter__link-mask span {
   transform: translate3d(0, 0, 0);
 }
+
 .filter__link:hover .filter__link-mask,
 .filter__link.is-active .filter__link-mask {
   transform: translate3d(0, 0, 0);
 }
+
 .slide {
   display: flex;
   width: 50vw;
   height: 100%;
   padding: 20vh 0;
 }
+
 .slide--0 {
   width: 100vw;
 }
+
 .slide--1 {
   align-items: flex-start;
 }
+
 .slide--2 {
   align-items: flex-end;
 }
+
 .slide--3 {
   align-items: center;
 }
+
 .slide:last-child {
   width: 65vw;
   padding-right: 15vw;
 }
+
 .slide__inner {
   position: relative;
   padding-left: 15vw;
   width: 100%;
 }
+
 .slide__sub-title {
   position: absolute;
   top: 5%;
@@ -172,6 +194,7 @@ iframe.show {
   color: rgba(255, 255, 255, 0.5);
   font-size: 1vw;
 }
+
 .slide__title {
   position: absolute;
   top: 7.5%;
@@ -183,6 +206,7 @@ iframe.show {
   font-weight: 600;
   text-transform: uppercase;
 }
+
 .slide__project {
   color: #fff;
   position: absolute;
@@ -192,6 +216,7 @@ iframe.show {
   padding-top: 1.5vw;
   font-family: 'GmarketSans';
 }
+
 .slide__img {
   position: relative;
   overflow: hidden;
@@ -199,6 +224,7 @@ iframe.show {
   width: 100%;
   background-blend-mode: multiply;
 }
+
 .slide__img figure {
   position: absolute;
   top: 0;
@@ -206,6 +232,7 @@ iframe.show {
   width: 100%;
   height: 100%;
 }
+
 .slide__img figure img {
   position: absolute;
   top: 0;
@@ -215,11 +242,13 @@ iframe.show {
   -o-object-fit: cover;
   object-fit: cover;
 }
+
 img {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .scrollbar {
   position: absolute;
   bottom: 7.5%;
@@ -228,6 +257,7 @@ img {
   height: 1px;
   background-color: rgba(255, 255, 255, 0.25);
 }
+
 .scrollbar__handle {
   position: absolute;
   top: 0;
@@ -238,6 +268,7 @@ img {
   transform-origin: left;
   background-color: #fff;
 }
+
 .mask {
   display: flex;
   flex-direction: column;
@@ -250,16 +281,19 @@ img {
   visibility: hidden;
   opacity: 0;
 }
+
 .mask__slice {
   flex: 1;
   background-color: #fff;
 }
+
 .mask__inner {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
 .mask-line {
   position: relative;
   transform-origin: left;
@@ -270,6 +304,7 @@ img {
   visibility: hidden;
   opacity: 0;
 }
+
 .mask-line__inner {
   position: absolute;
   top: 0;
@@ -279,6 +314,7 @@ img {
   background-color: #000;
   transform-origin: left;
 }
+
 .resize {
   display: none;
   position: fixed;
@@ -289,6 +325,7 @@ img {
   background-color: #000;
   z-index: 9999;
 }
+
 .resize__inner {
   position: absolute;
   top: 50%;
@@ -299,6 +336,7 @@ img {
   text-decoration: none;
   font-family: 'GmarketSans';
 }
+
 .resize span {
   color: rgba(255, 255, 255, 0.5);
 }
