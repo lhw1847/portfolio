@@ -1,8 +1,10 @@
-window.onload = function(){
-    setTimeout(() => {
-      document.body.style.backgroundColor = "#111";
-    }, 500);
+function ready(){
+  setTimeout(() => {
+    document.body.style.backgroundColor = "#111";
+  }, 500);
 }
+document.addEventListener("DOMContentLoaded", ready);
+
 document.querySelector(".resize").addEventListener("wheel", e => {
   e.preventDefault
 })
