@@ -350,10 +350,14 @@ img {
     display: block;
   }
 }
+@media (max-height: 800px) {
+  .resize {
+    display: block;
+  }
+}
 .face {
   height: 100%;
   background: url(../img/face.webp) top / contain no-repeat;
-  filter: grayscale(0.3);
 }
 .textbox {
   border-bottom: 1px solid #ddd;
