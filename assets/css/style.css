@@ -350,16 +350,9 @@ img {
     display: block;
   }
 }
-.img {
-  position: absolute;
-  top: 0;
-  left: -100px;
-  width: 600px;
+.face {
   height: 100%;
-  transition: all 1s;
-}
-.img01 .img {
-  background: url(../img/face.webp) center / contain no-repeat;
+  background: url(../img/face.webp) top / contain no-repeat;
   filter: grayscale(0.3);
 }
 .textbox {
@@ -373,13 +366,14 @@ img {
 }
 
 .textbox label {
-  font-size: 1.24408em;
   flex: 1 1 7%;
 }
-
+label, input, textarea {
+  font-size: 20px;
+}
 .textbox input,
 .textbox textarea {
-  flex: 1 1 80%;
+  flex: 1 1 60%;
   background: #111;
   border: 0;
   color: #fff;
@@ -411,30 +405,19 @@ textarea:focus {
   font-family: "Chosunilbo_myungjo";
   font-size: 1.492895em;
   position: relative;
-  margin-right: 72px;
+  margin-right: 20px;
   background: #111;
   color: #fff;
   margin-top: 20px;
   cursor: pointer;
 }
 
-.contact .contact_btn button::before {
-  position: absolute;
-  content: "";
-  right: -72px;
-  bottom: -10px;
-  width: 50px;
-  height: 50px;
-  background: #ef004a;
-  border-radius: 50%;
-}
-
 .contact .contact_btn button::after {
   position: absolute;
   content: "";
-  right: -54px;
-  bottom: 3px;
+  right: -20px;
+  bottom: 7px;
   width: 13px;
   height: 14px;
-  background: url(../img/arrow2.svg);
+  background: url(../img/arrow.svg);
 }
