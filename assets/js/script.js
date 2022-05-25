@@ -24,7 +24,9 @@ const config = {
   width: window.innerWidth
 };
 
-
+window.onresize = function(){
+  new Smooth();
+}
 class Smooth {
   constructor() {
     this.bindAll();
@@ -82,9 +84,9 @@ class Smooth {
 
   setStyles() {
     this.dom.el.style.position = 'fixed';
-    this.dom.el.style.top = 0;
-    this.dom.el.style.left = 0;
-    this.dom.el.style.height = '100%';
+    // this.dom.el.style.top = 0;
+    // this.dom.el.style.left = 0;
+    // this.dom.el.style.height = '100%';
     this.dom.el.style.width = '100%';
     this.dom.el.style.overflow = 'hidden';
   }
