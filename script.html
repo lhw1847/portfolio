@@ -17,7 +17,8 @@
 
 <title>Portfolio</title>
 <link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/normalize.min.css">
+<link rel="stylesheet" href="assets/css/reset.css">
+<!-- <link rel="stylesheet" href="assets/css/normalize.min.css"> -->
 <link rel="stylesheet" href="assets/css/style.css">
 
 
@@ -50,25 +51,25 @@
     <nav class="filter">
         <ul class="filter__list">
           <li class="filter__item">
-            <a href="index.html" class="filter__link js-triggermenu">
+            <a href="index.html" class="filter__link js-trigger">
               <div class="filter__link-mask" area-hidden=""><span>About</span></div>
               About
             </a>
           </li>
           <li class="filter__item">
-            <a href="site.html" class="filter__link js-triggermenu">
+            <a href="site.html" class="filter__link js-trigger">
               <div class="filter__link-mask" area-hidden=""><span>Site</span></div>
               Site
             </a>
           </li>
           <li class="filter__item">
-            <a href="script.html" class="filter__link is-active js-triggermenu">
+            <a href="script.html" class="filter__link is-active js-trigger">
               <div class="filter__link-mask" area-hidden=""><span>Script</span></div>
               Script
             </a>
           </li>
           <li class="filter__item">
-            <a href="contact.html" class="filter__link js-triggermenu">
+            <a href="contact.html" class="filter__link js-trigger">
               <div class="filter__link-mask" area-hidden=""><span>Contact</span></div>
               Contact
             </a>
@@ -280,19 +281,21 @@
 </div>
 
 <div class="mask js-mask">
-    <div class="mask__slice js-mask__slice"></div>
-    <div class="mask__slice js-mask__slice"></div>
-    <div class="mask__slice js-mask__slice"></div>
-    <div class="mask__slice js-mask__slice"></div>
-    <div class="mask__slice js-mask__slice"></div>
-    <div class="mask__inner">
-      <div class="logo logo--mask">
-        <div class="js-logo">DEVELOPER</div>
-      </div>
+  <div class="mask__slice js-mask__slice"></div>
+  <div class="mask__slice js-mask__slice"></div>
+  <div class="mask__slice js-mask__slice"></div>
+  <div class="mask__slice js-mask__slice"></div>
+  <div class="mask__slice js-mask__slice"></div>
+  <div class="mask__inner">
+      <figure class="logo logo--mask">
+          <div class="js-logo">
+              developer
+          </div>
+      </figure>
       <div class="mask-line js-mask-line">
-        <div class="mask-line__inner js-mask-line"></div>
+          <div class="mask-line__inner js-mask-line"></div>
       </div>
-    </div>
+  </div>
 </div>
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 <script src='assets/js/TweenMax.min.js'></script>

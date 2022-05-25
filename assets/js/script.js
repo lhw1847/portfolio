@@ -249,7 +249,7 @@ class Transition {
     window.scrollTo(0, 0);
   }
   Pagechange() {
-    document.querySelectorAll(".js-triggermenu").forEach((el) => {
+    document.querySelectorAll(".js-trigger").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
         const Href = el.getAttribute("href");
