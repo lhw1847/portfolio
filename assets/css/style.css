@@ -227,10 +227,11 @@
   
   .scrollbar {
     position: absolute;
-    bottom: 7.5%;
+    bottom: 0%;
     left: 20%;
-    right: 20%;
-    height: 1px;
+    right: 10%;
+    height: 5px;
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.25);
   }
   .scrollbar__handle {
