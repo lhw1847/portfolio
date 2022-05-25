@@ -89,8 +89,8 @@ class Smooth {
     this.dom.el.style.position = 'fixed';
     // this.dom.el.style.top = 0;
     // this.dom.el.style.left = 0;
-    this.dom.el.style.height = '90%';
-    this.dom.el.style.width = '90%';
+    this.dom.el.style.height = '100%';
+    this.dom.el.style.width = '100%';
     this.dom.el.style.overflow = 'hidden';
   }
 
