@@ -436,15 +436,15 @@ class Transition {
       trigger.addEventListener('click', e => {
         e.preventDefault();
 
-        if (this.state) return;
+        // if (this.state) return;
 
         this.dom.triggers.forEach(el => {
           el.classList.remove('is-active');
         });
         trigger.classList.add('is-active');
 
-        this.state = true;
-        this.tl.restart();
+        // this.state = true;
+        // this.tl.restart();
       });
     });
   }

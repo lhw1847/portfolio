@@ -183,6 +183,7 @@
         <div class="slide__img slide__img--proxy"></div>
         <a class="slide__project" href="javascript:void(0);" draggable="false">GAME START</a>
       </div>
+      <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
     </article>
     
     <article class="slide slide--2 js-slide">
@@ -192,6 +193,7 @@
         <div class="slide__img slide__img--proxy"></div>
         <a class="slide__project" href="javascript:void(0);" draggable="false">MUSIC PLAY</a>
       </div>
+      <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
     </article>
     
     <article class="slide slide--1 js-slide">
@@ -201,6 +203,7 @@
         <div class="slide__img slide__img--proxy"></div>
         <a class="slide__project" href="javascript:void(0);" draggable="false">GAME START</a>
       </div>
+      <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
     </article>
 
     <article class="slide slide--3 js-slide">
@@ -210,6 +213,7 @@
         <div class="slide__img slide__img--proxy"></div>
         <a class="slide__project" href="javascript:void(0);" draggable="false">GAME START</a>
       </div>
+      <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
     </article>
     
     <article class="slide slide--2 js-slide">
@@ -219,6 +223,7 @@
         <div class="slide__img slide__img--proxy"></div>
         <a class="slide__project" href="javascript:void(0);" draggable="false">EFFECT VIEW</a>
       </div>
+      <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
     </article>
 
     <article class="slide slide--1 js-slide">
@@ -228,6 +233,7 @@
           <div class="slide__img slide__img--proxy"></div>
           <a class="slide__project" href="javascript:void(0);" draggable="false">EFFECT VIEW</a>
         </div>
+        <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
       </article>
       
       <article class="slide slide--3 js-slide">
@@ -237,6 +243,7 @@
           <div class="slide__img slide__img--proxy"></div>
           <a class="slide__project" href="javascript:void(0);" draggable="false">EFFECT VIEW</a>
         </div>
+        <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
       </article>
       
       <article class="slide slide--2 js-slide">
@@ -246,6 +253,7 @@
           <div class="slide__img slide__img--proxy"></div>
           <a class="slide__project" href="javascript:void(0);" draggable="false">EFFECT VIEW</a>
         </div>
+        <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
       </article>
   
       <article class="slide slide--1 js-slide">
@@ -255,10 +263,10 @@
           <div class="slide__img slide__img--proxy"></div>
           <a class="slide__project" href="javascript:void(0);" draggable="false">EFFECT VIEW</a>
         </div>
+        <iframe src="script/tetrisGame/index.html" frameborder="0"></iframe>
       </article>
-    
+
   </div>
-  
   <div class="scrollbar" data-scrollbar>
     <div class="scrollbar__handle js-scrollbar__handle"></div>
   </div>
@@ -291,12 +299,13 @@
   
   btn.forEach(el => {
     el.addEventListener("click", e => {
-      iframe =  e.target.parentNode.querySelector("iframe");
-      title = e.target.parentNode.querySelector(".slide__title");
-      subTitle = e.target.parentNode.querySelector(".slide__sub-title");
+      
+    iframe =  e.target.parentNode.parentNode.querySelector("iframe");
+    title = e.target.parentNode.querySelector(".slide__title");
+    subTitle = e.target.parentNode.querySelector(".slide__sub-title");
       iframe.classList.toggle("show");
-      title.classList.toggle("move")
-      subTitle.classList.toggle("move")
+      // title.classList.toggle("move")
+      // subTitle.classList.toggle("move")
     })
   })
 </script>
