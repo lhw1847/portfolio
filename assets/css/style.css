@@ -396,7 +396,11 @@ label, input, textarea {
   border: 0;
   color: #fff;
 }
-
+.textbox input::placeholder,
+.textbox textarea::placeholder {
+  font-size: 16px;
+  font-family: "Chosunilbo_myungjo";
+}
 input:focus,
 textarea:focus {
   outline: none;
