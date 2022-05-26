@@ -439,3 +439,19 @@ textarea:focus {
   height: 14px;
   background: url(../img/arrow.svg);
 }
+table {
+  width: 80%;
+  font-size: 40px;
+  font-family: "GmarketSans";
+  color: #fff;
+  text-align-last: left;
+  vertical-align: middle;
+}
+tr {
+  
+}
+td {
+  font-weight: 300;
+  font-size: 30px;
+  white-space: pre;
+}
