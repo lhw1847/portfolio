@@ -1,6 +1,9 @@
 function ready(){
   setTimeout(() => {
     document.body.style.backgroundColor = "#111";
+    document.querySelectorAll(".slide__img figure").forEach(el => {
+      el.style.opacity = 1;
+    })
   }, 500);
 }
 document.addEventListener("DOMContentLoaded", ready);
