@@ -9,26 +9,11 @@ body {
   overflow-y: scroll;
   background-color: #fff;
   color: #fff;
-  font-family: 'Abel';
+  font-family: "Abel";
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-iframe {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  border-radius: 10px;
-  background: #fff;
-  transform: translate(30%, -150%);
-  transition: all 1s ease-in-out;
-  z-index: 999;
-}
-
-iframe.show {
-  transform: translate(30%, 0%);
 }
 
 .slide__title.move {
@@ -76,7 +61,7 @@ iframe.show {
   margin-bottom: 0.1vw;
 }
 
-.logo--mask>div {
+.logo--mask > div {
   width: 30vw;
   height: auto;
   margin: 0 auto;
@@ -231,7 +216,7 @@ p.js-transition-title {
   right: 0;
   font-size: 1.15vw;
   padding-top: 1.5vw;
-  font-family: 'GmarketSans';
+  font-family: "GmarketSans";
 }
 
 .slide__img {
@@ -352,7 +337,7 @@ img {
   color: #fff;
   text-align: center;
   text-decoration: none;
-  font-family: 'GmarketSans';
+  font-family: "GmarketSans";
 }
 
 .resize span {
@@ -373,6 +358,35 @@ img {
   height: 100%;
   background: url(../img/face.webp) top / contain no-repeat;
 }
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 100%;
+  padding: 20vh 0;
+  font-family: "GmarketSans";
+}
+.about > div {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 94%;
+  overflow: hidden;
+  margin: 3%;
+}
+.about_item {
+  width: 45%;
+}
+.about_item .title {
+  font-size: 30px;
+}
+.about_item .desc {
+  font-family: "Chosunilbo_myungjo";
+  font-size: 20px;
+  opacity: 0.6;
+  width: 100%;
+  text-align: justify;
+  white-space: normal;
+}
 .textbox {
   border-bottom: 1px solid #ddd;
   padding: 60px 0 15px 0;
@@ -386,7 +400,9 @@ img {
 .textbox label {
   flex: 1 1 7%;
 }
-label, input, textarea {
+label,
+input,
+textarea {
   font-size: 20px;
 }
 .textbox input,
@@ -442,20 +458,4 @@ textarea:focus {
   width: 13px;
   height: 14px;
   background: url(../img/arrow.svg);
-}
-table {
-  width: 80%;
-  font-size: 40px;
-  font-family: "GmarketSans";
-  color: #fff;
-  text-align-last: left;
-  vertical-align: middle;
-}
-tr {
-  
-}
-td {
-  font-weight: 300;
-  font-size: 30px;
-  white-space: pre;
 }
