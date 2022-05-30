@@ -83,7 +83,12 @@ body {
   right: 0;
   z-index: 10;
 }
-
+.filterAbout {
+  position: absolute;
+  bottom: 15%;
+  right: 45%;
+  z-index: 10;
+}
 .filter__list {
   display: flex;
 }
