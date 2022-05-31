@@ -86,7 +86,7 @@ body {
 .filterAbout {
   position: absolute;
   bottom: 15%;
-  right: 45%;
+  right: 20%;
   z-index: 10;
 }
 .filter__list {
