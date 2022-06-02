@@ -234,7 +234,7 @@
         );
         const particlesMaterial = new THREE.PointsMaterial({
             color: "hotpink",
-            size: 20,
+            size: 15,
             sizeAttenuation: true,
             map: particlesTexture,
             depthTest: false,
@@ -252,14 +252,14 @@
             Math.round(sizes.w * 0.69)
         );
         const createTypo = (font) => {
-            // const word = `webs`;
+            const word = `o`;
             const typoProperties = {
                 font: font,
                 size: typoSize,
-                height: 20
+                height: 200
             };
             const textMesh = new THREE.Mesh();
-            textMesh.geometry = new THREE.TextBufferGeometry(typoProperties);
+            textMesh.geometry = new THREE.TextBufferGeometry(word, typoProperties);
             textMesh.geometry.center();
             textMesh.material = shaderMaterial;
 
