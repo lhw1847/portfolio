@@ -185,9 +185,9 @@ body {
 .slide--3 {
   align-items: center;
 }
-/* .slide--4 {
-  width: 30vw;
-} */
+.slide--4 {
+  width: 45vw;
+}
 .slide:last-child {
   width: 65vw;
   padding-right: 15vw;
