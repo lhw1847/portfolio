@@ -49,6 +49,7 @@ body {
   z-index: 10;
   text-transform: uppercase;
   font-size: 20px;
+  color: #fff;
   /* pointer-events: none; */
 }
 
@@ -79,14 +80,15 @@ body {
 
 .filter {
   position: absolute;
-  top: 0vw;
+  top: 0;
   right: 0;
   z-index: 10;
 }
 .filterAbout {
   position: absolute;
-  bottom: 15%;
-  right: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
 }
 .filter__list {
@@ -107,7 +109,9 @@ body {
   text-transform: uppercase;
   overflow: hidden;
 }
-
+.filterAbout .filter__link {
+  font-size: 40px;
+}
 .filter__link-mask {
   position: absolute;
   top: 0;
@@ -119,7 +123,9 @@ body {
   transition: transform 0.75s ease;
   z-index: 2;
 }
-
+.filterAbout .filter__link-mask {
+  height: 90%;
+}
 .filter__link-mask span {
   display: block;
   padding: 15px;
@@ -128,7 +134,9 @@ body {
   transition: transform 0.75s ease;
   color: #fff;
 }
-
+.filterAbout .filter__link-mask span {
+  font-size: 40px;
+}
 .filter__link:hover .filter__link-mask span,
 .filter__link.is-active .filter__link-mask span {
   transform: translate3d(0, 0, 0);

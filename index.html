@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/css/fonts.css" />
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/star.css" />
 
   <script>
     window.console = window.console || function (t) {};
@@ -28,7 +29,7 @@
 </head>
 
 <body translate="no">
-  <h1 class="logo logo--top js-trigger">PORTFOLIO</h1>
+  <!-- <h1 class="logo logo--top js-trigger">PORTFOLIO</h1> -->
 
   <div class="resize">
     <div class="resize__inner">
@@ -37,10 +38,15 @@
   </div>
 
   <div class="scroll" data-scroll>
-    <nav class="filter">
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div id='title'>
+    <nav class="filterAbout">
       <ul class="filter__list">
         <li class="filter__item">
-          <a href="about.html" class="filter__link is-active js-trigger" draggable="false">
+          <a href="about.html" class="filter__link js-trigger" draggable="false">
             <div class="filter__link-mask" area-hidden="">
               <span>About</span>
             </div>
@@ -81,42 +87,12 @@
         </li>
       </ul>
     </nav>
-
-    <nav class="filterAbout">
-      <ul class="filter__list">
-        <li class="filter__item">
-          <a href="site.html" class="filter__link js-trigger" draggable="false">
-            <div class="filter__link-mask" area-hidden="">
-              <span>Site</span>
-            </div>
-            Site
-          </a>
-        </li>
-        <li class="filter__item">
-          <a href="script.html" class="filter__link js-trigger" draggable="false">
-            <div class="filter__link-mask" area-hidden="">
-              <span>Script</span>
-            </div>
-            Script
-          </a>
-        </li>
-        <li class="filter__item">
-          <a href="study.html" class="filter__link js-trigger" draggable="false">
-            <div class="filter__link-mask" area-hidden="">
-              <span>Study</span>
-            </div>
-            Study
-          </a>
-        </li>
-      </ul>
-    </nav>
-
+</div>
     <div class="scroll-content" data-scroll-content>
       <article class="slide slide--1 js-slide">
         <div class="slide__inner" style="padding: 0">
           <div class="slide__img js-transition-img">
             <figure class="js-transition-img__inner">
-              <div class="face"></div>
             </figure>
           </div>
         </div>
@@ -128,7 +104,7 @@
     <div class="scroll-content scroll-content--last" data-scroll-content>
       <article class="slide slide--1 js-slide">
         <div class="slide__inner" style="padding: 0">
-          <div class="slide__sub-title"><span>Introductions</span></div>
+          <div class="slide__sub-title"><span></span></div>
           <h2 class="slide__title">
             <div class="js-transition-title"></div>
           </h2>
@@ -139,30 +115,7 @@
         </div>
       </article>
 
-      <article class="about js-slide">
-        <div>
-          <div class="about_item js-transition-title">
-            <div class="title">CREATIVE</div>
-            <p class="desc"></p>
-          </div>
-          <div class="about_item js-transition-title">
-            <div class="title">PERFORMANCE</div>
-            <p class="desc"></p>
-          </div>
-        </div>
-        <div>
-          <div class="about_item js-transition-title">
-            <div class="title">PASSION</div>
-            <p class="desc"></p>
-          </div>
-          <div class="about_item js-transition-title">
-            <div class="title">DREAM</div>
-            <p class="desc"></p>
-          </div>
-        </div>
-      </article>
     </div>
-
     <div class="scrollbar" data-scrollbar>
       <div class="scrollbar__handle js-scrollbar__handle"></div>
     </div>
