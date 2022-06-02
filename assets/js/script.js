@@ -234,6 +234,7 @@ class Transition {
       images: [...document.querySelectorAll('.js-transition-img')],
       imagesInner: [...document.querySelectorAll('.js-transition-img__inner')],
       titles: [...document.querySelectorAll('.js-transition-title')],
+      subTitles: [...document.querySelectorAll('.js-transtion-sub-title')],
       hi: [document.querySelector(".hi")],
       logotop: [document.querySelector(".logo--top")],
       menubtn: [document.querySelector(".menu-btn")],
@@ -314,6 +315,9 @@ class Transition {
     set(this.dom.titles, {
       yPercent: 0
     }).
+    set(this.dom.subTitles, {
+      xPercent: 0
+    }).
 
     set(this.dom.mask, {
       autoAlpha: 1
@@ -340,6 +344,9 @@ class Transition {
 
     set(this.dom.titles, {
       yPercent: -100
+    }).
+    set(this.dom.subTitles, {
+      xPercent: -100
     }).
 
     set([this.dom.lines[0], this.dom.logo], {
@@ -413,6 +420,13 @@ class Transition {
         yPercent: 100
       }, {
         yPercent: 0,
+        ease: Expo.easeInOut
+      },
+      0.05, 'imagesStart').
+      staggerFromTo(this.dom.subTitles, 1.5, {
+        xPercent: 100
+      }, {
+        xPercent: 0,
         ease: Expo.easeInOut
       },
       0.05, 'imagesStart').

@@ -15,13 +15,8 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-
-.slide__title.move {
-  transform: translateY(-150%);
-}
-
-.slide__sub-title.move {
-  transform: translateX(80%);
+#canvas-wrapper {
+  position: fixed;
 }
 
 .scroll-content {
@@ -90,8 +85,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  font-weight: 700;  text-shadow: 
-  0 -1px 0 #ddd, 
+  font-weight: 700; 
+  text-shadow: 
+  0 -1px 0 #111, 
   0 1px 0 #2e2e2e, 
   0 2px 0 #2c2c2c, 
   0 3px 0 #2a2a2a, 
@@ -154,6 +150,7 @@ body {
 }
 .filterAbout .filter__link-mask span {
   font-size: 60px;
+  color: rgb(207, 207, 207);
 }
 .filter__link:hover .filter__link-mask span,
 .filter__link.is-active .filter__link-mask span {
@@ -248,6 +245,7 @@ p.js-transition-title {
   font-size: 1.15vw;
   padding-top: 1.5vw;
   font-family: "GmarketSans";
+  overflow: hidden;
 }
 
 .slide__img {
