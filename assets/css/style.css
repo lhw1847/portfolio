@@ -87,7 +87,7 @@ body {
   z-index: 10;
   font-weight: 700; 
   text-shadow: 
-  0 -1px 0 #111, 
+  0 -1px 0 #fff, 
   0 1px 0 #2e2e2e, 
   0 2px 0 #2c2c2c, 
   0 3px 0 #2a2a2a, 
@@ -150,7 +150,7 @@ body {
 }
 .filterAbout .filter__link-mask span {
   font-size: 60px;
-  color: rgb(207, 207, 207);
+  color: gray;
 }
 .filter__link:hover .filter__link-mask span,
 .filter__link.is-active .filter__link-mask span {
