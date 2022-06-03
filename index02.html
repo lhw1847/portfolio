@@ -91,34 +91,6 @@
       </ul>
     </nav>
 </div>
-    <div class="scroll-content" data-scroll-content>
-      <article class="slide slide--1 js-slide">
-        <div class="slide__inner" style="padding: 0">
-          <div class="slide__img js-transition-img">
-            <figure class="js-transition-img__inner">
-            </figure>
-          </div>
-        </div>
-      </article>
-
-      <article class="about js-slide"></article>
-    </div>
-
-    <div class="scroll-content scroll-content--last" data-scroll-content>
-      <article class="slide slide--1 js-slide">
-        <div class="slide__inner" style="padding: 0">
-          <div class="slide__sub-title"><span></span></div>
-          <h2 class="slide__title">
-            <div class="js-transition-title"></div>
-          </h2>
-          <div class="slide__img slide__img--proxy">
-            <span class="js-transition-title"></span>
-          </div>
-          <a target="" href="javascript:void(0);" class="slide__project" draggable="false"></a>
-        </div>
-      </article>
-
-    </div>
 
   </div>
 
@@ -262,7 +234,7 @@
         );
         const particlesMaterial = new THREE.PointsMaterial({
             color: "hotpink",
-            size: 20,
+            size: 15,
             sizeAttenuation: true,
             map: particlesTexture,
             depthTest: false,
@@ -280,14 +252,14 @@
             Math.round(sizes.w * 0.69)
         );
         const createTypo = (font) => {
-            // const word = `webs`;
+            const word = ``;
             const typoProperties = {
                 font: font,
                 size: typoSize,
-                height: 20
+                height: 200
             };
             const textMesh = new THREE.Mesh();
-            textMesh.geometry = new THREE.TextBufferGeometry(typoProperties);
+            textMesh.geometry = new THREE.TextBufferGeometry(word, typoProperties);
             textMesh.geometry.center();
             textMesh.material = shaderMaterial;
 
@@ -316,8 +288,8 @@
             },
             moveParticles(cX, cY) {
                 const c = 2;
-                mouseX = (cX - sizes.w * 0.5) * c;
-                mouseY = (cY - sizes.h * 0.5) * c;
+                mouseX = (cX - sizes.w * 0.3) * c;
+                mouseY = (cY - sizes.h * 0.3) * c;
             },
             onMouseMove(e) {
                 mouseFX.moveTypo(e.clientX, e.clientY);
@@ -341,8 +313,8 @@
 
             uniforms.u_time.value = elapsedTime;
 
-            const rotX = Math.sin(elapsedTime * 0.8) * 0.3;
-            const rotY = Math.sin(elapsedTime * 1.2) * 0.3;
+            const rotX = Math.sin(elapsedTime * 0.8) * 0.1;
+            const rotY = Math.sin(elapsedTime * 1.2) * 0.1;
             particles.rotation.x = rotX;
             particles.rotation.y = rotY;
 
@@ -350,9 +322,9 @@
             typoGroup.rotation.y = rotY;
 
             const cAnim = Math.sin(elapsedTime * 0.25);
-            particlesMaterial.color.setRGB(0.29 + cAnim, 0.5 - cAnim, 0.68 + cAnim);
+            particlesMaterial.color.setRGB(1.29 , 1.5 , 1.68);
 
-            const ease = 0.03;
+            const ease = 0.01;
             camera.position.x += (mouseX - camera.position.x) * ease;
             camera.position.y += (mouseY * -1 - camera.position.y) * ease;
             camera.lookAt(scene.position);
