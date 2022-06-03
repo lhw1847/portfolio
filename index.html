@@ -288,8 +288,8 @@
             },
             moveParticles(cX, cY) {
                 const c = 2;
-                mouseX = (cX - sizes.w * 0.5) * c;
-                mouseY = (cY - sizes.h * 0.5) * c;
+                mouseX = (cX - sizes.w * 0.3) * c;
+                mouseY = (cY - sizes.h * 0.3) * c;
             },
             onMouseMove(e) {
                 mouseFX.moveTypo(e.clientX, e.clientY);
@@ -313,8 +313,8 @@
 
             uniforms.u_time.value = elapsedTime;
 
-            const rotX = Math.sin(elapsedTime * 0.8) * 0.3;
-            const rotY = Math.sin(elapsedTime * 1.2) * 0.3;
+            const rotX = Math.sin(elapsedTime * 0.8) * 0.1;
+            const rotY = Math.sin(elapsedTime * 1.2) * 0.1;
             particles.rotation.x = rotX;
             particles.rotation.y = rotY;
 
@@ -322,9 +322,9 @@
             typoGroup.rotation.y = rotY;
 
             const cAnim = Math.sin(elapsedTime * 0.25);
-            particlesMaterial.color.setRGB(1.29 , 1.5 , 1.68 );
+            particlesMaterial.color.setRGB(1.29 , 1.5 , 1.68);
 
-            const ease = 0.03;
+            const ease = 0.01;
             camera.position.x += (mouseX - camera.position.x) * ease;
             camera.position.y += (mouseY * -1 - camera.position.y) * ease;
             camera.lookAt(scene.position);

@@ -16,12 +16,20 @@ document.querySelector(".mask").addEventListener("wheel", e => {
 })
 document.querySelectorAll(".slide__project").forEach(el => {
   el.addEventListener("mouseover", e => {
-    el.querySelector(".line").style.width = "100%";
+    el.querySelector(".line").style.transform = "translateX(0)";
+    el.querySelector(".line").classList.remove("hover");
   })
 })
 document.querySelectorAll(".slide__project").forEach(el => {
   el.addEventListener("mouseout", e => {
-    el.querySelector(".line").style.width = "0%";
+    el.querySelector(".line").style.transform = "translateX(100%)";
+    setTimeout(() => {
+      el.querySelector(".line").classList.add("hover");
+      el.querySelector(".line").style.display = "none";
+    }, 300);
+    setTimeout(() => {
+      el.querySelector(".line").style.display = "block";
+    }, 330);
   })
 })
 const math = {

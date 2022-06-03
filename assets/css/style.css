@@ -134,7 +134,7 @@ body {
   font-size: 60px;
 }
 .filterAbout .filter__list .filter__item:nth-child(1) .filter__link .filter__link-mask span {color: pink;}
-.filterAbout .filter__list .filter__item:nth-child(2) .filter__link .filter__link-mask span {color: antiquewhite;}
+.filterAbout .filter__list .filter__item:nth-child(2) .filter__link .filter__link-mask span {color: wheat;}
 .filterAbout .filter__list .filter__item:nth-child(3) .filter__link .filter__link-mask span {color: aquamarine;}
 .filterAbout .filter__list .filter__item:nth-child(4) .filter__link .filter__link-mask span {color: skyblue;}
 .filterAbout .filter__list .filter__item:nth-child(5) .filter__link .filter__link-mask span {color: slateblue;}
@@ -237,10 +237,14 @@ p.js-transition-title {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: translateX(-100%);
   transition: all 0.3s ease-in-out;
+}
+.slide__project .line.hover {
+  transform: translateX(-100%) !important;
 }
 .slide__img {
   position: relative;

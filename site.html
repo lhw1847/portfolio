@@ -150,7 +150,7 @@
         <div class="slide__sub-title"><span>SITE01</span></div>
         <h2 class="slide__title"><div class="js-transition-title">Web Standard</div></h2>
         <div class="slide__img slide__img--proxy"></div>
-        <a target="_blank" href="https://lhw1847.github.io/webs_class/site/webClass/index.html" class="slide__project" draggable="false"><div class="js-transtion-sub-title">웹 표준 사이트</div><div class="line"></div></a>
+        <a  class="slide__project" draggable="false"><div class="js-transtion-sub-title">웹 표준 사이트</div><div class="line"></div></a>
       </div>
     </article>
     
@@ -228,18 +228,6 @@
 <script src='assets/js/TweenMax.min.js'></script>
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
 <script id="rendered-js" src="assets/js/script.js"></script>
-<script>
-  document.querySelectorAll(".slide__project").forEach(el => {
-    el.addEventListener("mouseover", e => {
-      el.querySelector(".line").style.width = "100%";
-    })
-  })
-  document.querySelectorAll(".slide__project").forEach(el => {
-    el.addEventListener("mouseout", e => {
-      el.querySelector(".line").style.width = "0%";
-    })
-  })
-</script>
 </body>
 
 </html>
