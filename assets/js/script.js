@@ -14,7 +14,16 @@ document.querySelector(".resize").addEventListener("wheel", e => {
 document.querySelector(".mask").addEventListener("wheel", e => {
   e.preventDefault();
 })
-
+document.querySelectorAll(".slide__project").forEach(el => {
+  el.addEventListener("mouseover", e => {
+    el.querySelector(".line").style.width = "100%";
+  })
+})
+document.querySelectorAll(".slide__project").forEach(el => {
+  el.addEventListener("mouseout", e => {
+    el.querySelector(".line").style.width = "0%";
+  })
+})
 const math = {
   lerp: (a, b, n) => {
     return (1 - n) * a + n * b;
