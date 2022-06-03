@@ -252,7 +252,7 @@
             Math.round(sizes.w * 0.69)
         );
         const createTypo = (font) => {
-            const word = `o`;
+            const word = ``;
             const typoProperties = {
                 font: font,
                 size: typoSize,
@@ -322,7 +322,7 @@
             typoGroup.rotation.y = rotY;
 
             const cAnim = Math.sin(elapsedTime * 0.25);
-            particlesMaterial.color.setRGB(0.29 + cAnim, 0.5 - cAnim, 0.68 + cAnim);
+            particlesMaterial.color.setRGB(1.29 , 1.5 , 1.68 );
 
             const ease = 0.03;
             camera.position.x += (mouseX - camera.position.x) * ease;
