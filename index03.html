@@ -18,21 +18,19 @@
   <title>CodePen - Parallax Depth Cards</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway:500.700'>
+  
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
 <style>
 body {
   margin: 40vh 40px 0 40px;
-  font-family: "Raleway";
   font-size: 14px;
   font-weight: 500;
-  background-color: #BCAAA4;
+  background-color: #BCAAA4 !important;
   -webkit-font-smoothing: antialiased;
 }
 
 .title {
-  font-family: "Raleway";
   font-size: 24px;
   font-weight: 700;
   color: #5D4037;
@@ -53,7 +51,9 @@ h1 + p, p + p {
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.container a {
+  overflow: hidden;
+}
 .card-wrap {
   margin: 10px;
   transform: perspective(800px);
@@ -166,6 +166,11 @@ h1 + p, p + p {
 </head>
 
 <body translate="no" >
+  <div class="resize">
+    <div class="resize__inner">
+      <p>Please view in <span>full page</span> mode</p>
+    </div>
+  </div>
   <h1 class="title">PORTFOLIO</h1>
 
 <div id="app" class="container">
@@ -217,9 +222,7 @@ h1 + p, p + p {
 </div>
     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
-    <script src="assets/js/TweenMax.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script id="rendered-js" src="assets/js/link.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
       <script id="rendered-js" >
 Vue.config.devtools = true;
@@ -300,6 +303,8 @@ const app = new Vue({
   el: '#app' });
 //# sourceURL=pen.js
     </script>
+        <script src="assets/js/TweenMax.min.js"></script>
+        <script id="rendered-js" src="assets/js/link.js"></script>
 
   
 
