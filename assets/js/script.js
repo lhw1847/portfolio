@@ -32,6 +32,12 @@ document.querySelectorAll(".slide__project").forEach(el => {
     }, 330);
   })
 })
+
+if(window.innerWidth < window.innerHeight){
+  document.querySelector(".resize").style.writingMode = "vertical-rl";
+  document.querySelector(".resize").style.fontSize = "50px";
+}
+
 const math = {
   lerp: (a, b, n) => {
     return (1 - n) * a + n * b;
